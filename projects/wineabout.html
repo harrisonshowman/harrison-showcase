@@ -15,11 +15,32 @@
         <link rel="stylesheet" href="../style.css">
     <style>
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background: #faf6f2;
-            color: #3d2c1e;
+            background: #f5f7fa;
+            color: #222;
+        }
+        header {
+            background: #222;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            color: #888;
+            font-size: 0.95rem;
         }
         .container {
             max-width: 800px;
@@ -28,11 +49,6 @@
             border-radius: 12px;
             box-shadow: 0 2px 12px rgba(60,40,20,0.08);
             padding: 32px;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.2em;
-            color: #7b3f00;
         }
         .subtitle {
             color: #a67c52;
@@ -70,6 +86,9 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1 style="color: #fff;">WineAbout App</h1>
+    </header>
     <div class="container">
         <a href="../index.html" class="back-button">Back to Home</a>
         <h1>Wine About App</h1>
@@ -108,7 +127,7 @@
             </section>
         </main>
         <footer>
-            <p>&copy; 2025 Harrison Showman</p>
+            <p style="color: #888;">&copy; 2024 Harrison Showman. All rights reserved.</p>
         </footer>
     </div>
 </body>
