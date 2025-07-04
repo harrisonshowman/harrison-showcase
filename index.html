@@ -41,12 +41,18 @@
             gap: 2rem;
             margin-top: 2rem;
         }
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+        }
         .project-card {
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             padding: 1.5rem;
             transition: box-shadow 0.2s;
+            display: block;
+            height: 100%;
         }
         .project-card:hover {
             box-shadow: 0 4px 16px rgba(0,0,0,0.13);
@@ -76,24 +82,34 @@
     <main>
         <section class="projects">
             <div class="project-card">
-                <h2 class="project-title">WineAbout App</h2>
-                <p class="project-desc">A social wine journal app for discovering, reviewing, and sharing wines with friends. Built with React Native and Firebase.</p>
+                <a class="project-link" href="projects/wineabout.html">
+                    <h2 class="project-title">WineAbout App</h2>
+                    <p class="project-desc">A social wine journal app for discovering, reviewing, and sharing wines with friends. Built with React Native and Firebase.</p>
+                </a>
             </div>
             <div class="project-card">
-                <h2 class="project-title">PictureLocation App</h2>
-                <p class="project-desc">A mobile app that tags and organizes your photos by location using GPS metadata. Developed using Swift and MapKit.</p>
+                <a class="project-link" href="projects/picturelocationapp.html">
+                    <h2 class="project-title">PictureLocation App</h2>
+                    <p class="project-desc">A mobile app that tags and organizes your photos by location using GPS metadata. Developed using Swift and MapKit.</p>
+                </a>
             </div>
             <div class="project-card">
-                <h2 class="project-title">3D Character Animation</h2>
-                <p class="project-desc">Created lifelike 3D character animations for games and AR/VR experiences. Utilized Blender and Unity's animation system.</p>
+                <a class="project-link" href="projects/3dcharacteranimation.html">
+                    <h2 class="project-title">3D Character Animation</h2>
+                    <p class="project-desc">Created lifelike 3D character animations for games and AR/VR experiences. Utilized Blender and Unity's animation system.</p>
+                </a>
             </div>
             <div class="project-card">
-                <h2 class="project-title">Game Development in Unity</h2>
-                <p class="project-desc">Designed and developed interactive games using Unity and C#. Focused on gameplay mechanics, UI, and performance optimization.</p>
+                <a class="project-link" href="projects/gamedevelopmentinunity.html">
+                    <h2 class="project-title">Game Development in Unity</h2>
+                    <p class="project-desc">Designed and developed interactive games using Unity and C#. Focused on gameplay mechanics, UI, and performance optimization.</p>
+                </a>
             </div>
             <div class="project-card">
-                <h2 class="project-title">Flappy Football Mobile App</h2>
-                <p class="project-desc">A fun, fast-paced mobile game inspired by Flappy Bird, but with a football twist. Built with Flutter and Dart.</p>
+                <a class="project-link" href="projects/flappyfootball.html">
+                    <h2 class="project-title">Flappy Football Mobile App</h2>
+                    <p class="project-desc">A fun, fast-paced mobile game inspired by Flappy Bird, but with a football twist. Built with Flutter and Dart.</p>
+                </a>
             </div>
         </section>
     </main>
