@@ -46,81 +46,35 @@
     </head>
     <body>
         <header>
-            <h1 style="color: #fff;">PictureLocation App</h1>
+            <h1>PictureLocation App</h1>
         </header>
         <main>
-            <p style="color: #222;">A mobile app that tags and organizes your photos by location using GPS metadata. Developed using Swift and MapKit.</p>
+            <section class="app-description">
+                <p>
+                    PictureLocation is a mobile app that tags and organizes your photos by location using GPS metadata.
+                    Developed with Swift and MapKit, it helps you remember where every photo was taken.
+                </p>
+            </section>
+            <section class="app-screenshots">
+                <h2>Screenshots</h2>
+                <div class="screenshots">
+                    <img src="images/picturelocation1.png" alt="PictureLocation App Home" class="screenshot">
+                    <img src="images/picturelocation2.png" alt="Map View" class="screenshot">
+                    <img src="images/picturelocation3.png" alt="Photo Details" class="screenshot">
+                </div>
+            </section>
+            <section class="app-details">
+                <h2>Features</h2>
+                <ul>
+                    <li>Automatically tags photos with GPS location</li>
+                    <li>Organize and search photos by place</li>
+                    <li>Interactive map view of your photo locations</li>
+                    <li>Simple, privacy-focused design</li>
+                </ul>
+            </section>
         </main>
         <footer>
-            <p style="color: #888;">&copy; 2024 Harrison Showman. All rights reserved.</p>
+            <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
         </footer>
-    <div id="controls">
-        <label>
-            Take a picture:
-            <input type="file" accept="image/*" capture="environment" id="photoInput">
-        </label>
-        <div class="photo-list" id="photoList"></div>
-    </div>
-    <div id="map"></div>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Initialize the map
-        const map = L.map('map').setView([37.773972, -122.431297], 13); // Default to San Francisco
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Store photos and their locations
-        const photos = [];
-
-        // Handle photo input
-        document.getElementById('photoInput').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            // Get current location
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    const lat = position.coords.latitude;
-                    const lng = position.coords.longitude;
-
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const imgSrc = e.target.result;
-                        addPhoto(imgSrc, lat, lng);
-                    };
-                    reader.readAsDataURL(file);
-                }, function() {
-                    alert('Could not get your location.');
-                });
-            } else {
-                alert('Geolocation is not supported by your browser.');
-            }
-        });
-
-        function addPhoto(imgSrc, lat, lng) {
-            // Add marker to map
-            const marker = L.marker([lat, lng]).addTo(map);
-            marker.bindPopup(`<img src="${imgSrc}" class="photo-marker-img">`);
-
-            // Add to photo list
-            const photoList = document.getElementById('photoList');
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.className = 'photo-thumb';
-            img.title = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`;
-            img.onclick = () => {
-                map.setView([lat, lng], 16);
-                marker.openPopup();
-            };
-            photoList.appendChild(img);
-
-            // Store photo data
-            photos.push({ imgSrc, lat, lng, marker });
-        }
-    </script>
 </body>
 </html>
