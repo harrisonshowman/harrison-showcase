@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Picture Location App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Leaflet CSS for the map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        #map { height: 60vh; width: 100%; }
+        #controls { padding: 1em; }
+        .photo-marker-img { width: 100px; height: auto; border-radius: 8px; }
+        .photo-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1em; }
+        .photo-thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Picture Location App</h1>
+    <div id="controls">
+        <label>
+            Take a picture:
+            <input type="file" accept="image/*" capture="environment" id="photoInput">
+        </label>
+        <div class="photo-list" id="photoList"></div>
+    </div>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([37.773972, -122.431297], 13); // Default to San Francisco
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Store photos and their locations
+        const photos = [];
+
+        // Handle photo input
+        document.getElementById('photoInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            // Get current location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imgSrc = e.target.result;
+                        addPhoto(imgSrc, lat, lng);
+                    };
+                    reader.readAsDataURL(file);
+                }, function() {
+                    alert('Could not get your location.');
+                });
+            } else {
+                alert('Geolocation is not supported by your browser.');
+            }
+        });
+
+        function addPhoto(imgSrc, lat, lng) {
+            // Add marker to map
+            const marker = L.marker([lat, lng]).addTo(map);
+            marker.bindPopup(`<img src="${imgSrc}" class="photo-marker-img">`);
+
+            // Add to photo list
+            const photoList = document.getElementById('photoList');
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.className = 'photo-thumb';
+            img.title = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`;
+            img.onclick = () => {
+                map.setView([lat, lng], 16);
+                marker.openPopup();
+            };
+            photoList.appendChild(img);
+
+            // Store photo data
+            photos.push({ imgSrc, lat, lng, marker });
+        }
+    </script>
+</body>
+</html>
