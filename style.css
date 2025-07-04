@@ -1,4 +1,4 @@
-/* CSS for a modern, clean website layout */
+/* Updated CSS for a blue/green professional theme */
 
 /* Reset some default styles */
 * {
@@ -12,15 +12,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f8f9fa;
-    color: #222;
+    background: #e0f7fa; /* Light blue background */
+    color: #004d40; /* Dark green text */
     line-height: 1.6;
 }
 
 /* Header */
 header {
-    background: #222;
-    color: #fff;
+    background: #004d40; /* Dark green background */
+    color: #e0f7fa; /* Light blue text */
     padding: 2rem 0;
     text-align: center;
 }
@@ -33,13 +33,13 @@ header h1 {
 
 /* Navigation */
 nav {
-    background: #333;
+    background: #00796b; /* Medium green background */
     padding: 0.5rem 0;
     text-align: center;
 }
 
 nav a {
-    color: #fff;
+    color: #e0f7fa; /* Light blue text */
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 500;
@@ -47,7 +47,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffd700;
+    color: #004d40; /* Dark green hover effect */
 }
 
 /* Main content */
@@ -55,19 +55,58 @@ main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 2rem;
-    background: #fff;
+    background: #ffffff; /* White background */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* Footer */
 footer {
-    background: #222;
-    color: #fff;
+    background: #004d40; /* Dark green background */
+    color: #e0f7fa; /* Light blue text */
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
     font-size: 0.95rem;
+}
+
+/* Project-specific styles */
+.project-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.project-header h1 {
+    font-size: 2.5rem;
+    color: #00796b; /* Medium green text */
+}
+.project-header .subtitle {
+    font-size: 1.2rem;
+    color: #004d40; /* Dark green text */
+    margin-top: 0.5rem;
+}
+.project-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.project-content img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+.project-content p {
+    margin: 1rem 0;
+    color: #004d40; /* Dark green text */
+}
+.project-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #00796b; /* Medium green text */
 }
 
 /* Responsive */
@@ -77,5 +116,11 @@ footer {
     }
     header h1 {
         font-size: 1.5rem;
+    }
+    .project-header h1 {
+        font-size: 2rem;
+    }
+    .project-content {
+        padding: 1rem;
     }
 }
