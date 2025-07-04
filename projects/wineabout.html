@@ -1,134 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <base href="/harrison-showcase/" />
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>WineAbout App</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
-        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
-        <link rel="manifest" href="site.webmanifest" />
-        <link rel="stylesheet" href="../style.css">
-    <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
-            color: #004d40;
-        }
-        header {
-            background: #004d40;
-            color: #e0f7fa;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 0 1rem 0;
-            color: #004d40;
-            font-size: 0.95rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(60,40,20,0.08);
-            padding: 32px;
-        }
-        .subtitle {
-            color: #a67c52;
-            margin-bottom: 1.5em;
-        }
-        .screenshot {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(60,40,20,0.10);
-            margin: 24px 0;
-            display: block;
-        }
-        .contributions {
-            background: #f7ede2;
-            border-left: 4px solid #7b3f00;
-            padding: 16px 24px;
-            margin: 24px 0;
-            border-radius: 6px;
-        }
-        .back-button {
-            display: inline-block;
-            margin-bottom: 24px;
-            padding: 10px 20px;
-            background: #7b3f00;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 700;
-        }
-        @media (max-width: 600px) {
-            .container { padding: 16px; }
-            h1 { font-size: 2em; }
-        }
-    </style>
+    <base href="/harrison-showcase/" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>WineAbout App</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
-        <h1 style="color: #fff;">WineAbout App</h1>
+        <h1>WineAbout App</h1>
+        <p>A modern wine journaling and discovery app</p>
     </header>
-    <div class="container">
-        <a href="../" class="back-button">Back to Home</a>
-        <h1>Wine About App</h1>
-        <div class="subtitle">A modern wine journaling and discovery app</div>
-        <img src="wineabout-screenshot.png" alt="Wine About App Screenshot" class="screenshot">
-
-        <p>
-            <strong>Wine About</strong> is an iOS app designed for wine lovers to track, rate, and discover wines. The app features a clean, intuitive interface built with Swift and SwiftUI, making it easy to log tastings, add notes, and explore new favorites.
-        </p>
-
-        <div class="contributions">
-            <h2>My Contributions</h2>
-            <ul>
-                <li>Designed and implemented the entire front-end using <strong>Swift</strong> and <strong>SwiftUI</strong></li>
-                <li>Created custom UI components for wine entries, ratings, and tasting notes</li>
-                <li>Developed smooth navigation and responsive layouts for iPhone and iPad</li>
-                <li>Integrated animations and accessibility features for a polished user experience</li>
+    <main>
+        <a href="../index.html" class="button-accent" style="margin-bottom:2rem;max-width:200px;">← Back to Home</a>
+        <section class="container" style="margin-bottom:2.5rem; background: #fff; border-radius: 1.5rem; box-shadow: 0 8px 32px #005A9C18; padding: 2.5rem 2rem;">
+            <img src="wineabout-screenshot.png" alt="WineAbout App Screenshot" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; margin-bottom:2rem; display:block; margin-left:auto; margin-right:auto;">
+            <p>
+                <strong>WineAbout</strong> is an iOS app designed for wine lovers to track, rate, and discover wines. The app features a clean, intuitive interface built with Swift and SwiftUI, making it easy to log tastings, add notes, and explore new favorites.
+            </p>
+            <div style="background:linear-gradient(90deg,#00C8B4 0%,#39FF14 100%);border-radius:8px;padding:1.4rem 1.5rem;margin:2rem 0 1.5rem 0;">
+                <h2 style="margin-top:0;color:#232F34;">My Contributions</h2>
+                <ul>
+                    <li>Designed and implemented the front-end using <strong>Swift</strong> and <strong>SwiftUI</strong></li>
+                    <li>Created custom UI components for wine entries, ratings, and tasting notes</li>
+                    <li>Developed smooth navigation and responsive layouts for iPhone and iPad</li>
+                    <li>Integrated animations and accessibility features for a polished user experience</li>
+                </ul>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+                <a href="https://github.com/yourusername/wineabout" target="_blank" class="button-accent" style="max-width:270px;display:inline-block;">View on GitHub</a>
+            </div>
+            <h2>App Features</h2>
+            <ul style="margin-bottom:1.5rem;">
+                <li>Track wines you've tasted with detailed notes</li>
+                <li>Easy rating system for quick impressions</li>
+                <li>Discover new wines based on friends' reviews</li>
+                <li>Sleek, modern interface inspired by wine journals</li>
+                <li>Private and social modes for your entries</li>
             </ul>
-        </div>
-
-        <p>
-            <a href="https://github.com/yourusername/wineabout" target="_blank" style="color:#7b3f00;text-decoration:underline;">View the project on GitHub</a>
-        </p>
-
-        <header>
-            <h1>WineAbout App</h1>
-        </header>
-        <main>
-            <section>
-                <h2>Demonstration</h2>
-                <p>Placeholder for demonstration video or pictures.</p>
-            </section>
-            <section>
-                <h2>Description</h2>
-                <p>A social wine journal app for discovering, reviewing, and sharing wines with friends.</p>
-            </section>
-        </main>
-        <footer>
-            <p style="color: #888;">&copy; 2024 Harrison Showman. All rights reserved.</p>
-        </footer>
-    </div>
+            <h2>Screenshots & Demo</h2>
+            <p>Want to see the app in action? <br>Demo video and more screenshots coming soon.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
+    </footer>
 </body>
 </html>

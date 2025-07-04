@@ -12,112 +12,60 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="site.webmanifest" />
-    <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
-            color: #004d40;
-        }
-        header {
-            background: #004d40;
-            color: #e0f7fa;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            padding: 1rem;
-        }
-        .project-link {
-            text-decoration: none;
-            color: inherit;
-        }
-        .project-card {
-            background: linear-gradient(135deg, #ffffff, #b2dfdb);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: block;
-            height: 100%;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        .project-title {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #00796b;
-        }
-        .project-desc {
-            margin: 0.5rem 0 0 0;
-            color: #004d40;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 0 1rem 0;
-            color: #004d40;
-            font-size: 0.95rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1 style="color: #fff;">Harrison's Project Showcase</h1>
-        <p style="color: #fff;">Explore my latest work and side projects</p>
+        <h1>Harrison's Project Showcase</h1>
+        <p>Explore my latest work and side projects</p>
     </header>
     <main>
         <section class="projects">
             <div class="project-card">
                 <a class="project-link" href="projects/wineabout.html">
-                    <h2 class="project-title" style="color: #1a73e8;">WineAbout App</h2>
-                    <p class="project-desc" style="color: #444;">A social wine journal app for discovering, reviewing, and sharing wines with friends. Built with React Native and Firebase.</p>
+                    <h2 class="project-title">WineAbout App</h2>
+                    <p class="project-desc">
+                        A social wine journal app for discovering, reviewing, and sharing wines with friends. Built with React Native and Firebase.
+                    </p>
                 </a>
             </div>
             <div class="project-card">
                 <a class="project-link" href="projects/picturelocationapp.html">
-                    <h2 class="project-title" style="color: #1a73e8;">PictureLocation App</h2>
-                    <p class="project-desc" style="color: #444;">A mobile app that tags and organizes your photos by location using GPS metadata. Developed using Swift and MapKit.</p>
+                    <h2 class="project-title">PictureLocation App</h2>
+                    <p class="project-desc">
+                        A mobile app that tags and organizes your photos by location using GPS metadata. Developed using Swift and MapKit.
+                    </p>
                 </a>
             </div>
             <div class="project-card">
                 <a class="project-link" href="projects/3dcharacteranimation.html">
-                    <h2 class="project-title" style="color: #1a73e8;">3D Character Animation</h2>
-                    <p class="project-desc" style="color: #444;">Created lifelike 3D character animations for games and AR/VR experiences. Utilized Blender and Unity's animation system.</p>
+                    <h2 class="project-title">3D Character Animation</h2>
+                    <p class="project-desc">
+                        Created lifelike 3D character animations for games and AR/VR experiences. Utilized Blender and Unity's animation system.
+                    </p>
                 </a>
             </div>
             <div class="project-card">
                 <a class="project-link" href="projects/gamedevelopmentinunity.html">
-                    <h2 class="project-title" style="color: #1a73e8;">Game Development in Unity</h2>
-                    <p class="project-desc" style="color: #444;">Designed and developed interactive games using Unity and C#. Focused on gameplay mechanics, UI, and performance optimization.</p>
+                    <h2 class="project-title">Game Development in Unity</h2>
+                    <p class="project-desc">
+                        Designed and developed interactive games using Unity and C#. Focused on gameplay mechanics, UI, and performance optimization.
+                    </p>
                 </a>
             </div>
             <div class="project-card">
                 <a class="project-link" href="projects/flappyfootball.html">
-                    <h2 class="project-title" style="color: #1a73e8;">Flappy Football Mobile App</h2>
-                    <p class="project-desc" style="color: #444;">A fun, fast-paced mobile game inspired by Flappy Bird, but with a football twist. Built with Flutter and Dart.</p>
+                    <h2 class="project-title">Flappy Football Mobile App</h2>
+                    <p class="project-desc">
+                        A fun, fast-paced mobile game inspired by Flappy Bird, but with a football twist. Built with Flutter and Dart.
+                    </p>
                 </a>
             </div>
         </section>
+        <button class="button-accent" onclick="window.location.href='mailto:your@email.com'">Contact Me</button>
     </main>
     <footer>
-        <p style="color: #888;">&copy; 2024 Harrison Showman. All rights reserved.</p>
+        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 </html>

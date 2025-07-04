@@ -1,80 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <base href="/harrison-showcase/" />
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>PictureLocation App</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
-        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
-        <link rel="manifest" href="site.webmanifest" />
-        <link rel="stylesheet" href="../style.css">
-    <style>
-            body {
-                font-family: 'Roboto', Arial, sans-serif;
-                margin: 0;
-                background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
-                color: #004d40;
-            }
-            header {
-                background: #004d40;
-                color: #e0f7fa;
-                padding: 2rem 0;
-                text-align: center;
-            }
-            main {
-                max-width: 900px;
-                margin: 2rem auto;
-                padding: 0 1rem;
-            }
-            h1 {
-                margin: 0;
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-            }
-            footer {
-                text-align: center;
-                padding: 2rem 0 1rem 0;
-                color: #004d40;
-                font-size: 0.95rem;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>PictureLocation App</h1>
-        </header>
-        <main>
-            <section class="app-description">
-                <p>
-                    PictureLocation is a mobile app that tags and organizes your photos by location using GPS metadata.
-                    Developed with Swift and MapKit, it helps you remember where every photo was taken.
-                </p>
-            </section>
-            <section class="app-screenshots">
-                <h2>Screenshots</h2>
-                <div class="screenshots">
-                    <img src="images/picturelocation1.png" alt="PictureLocation App Home" class="screenshot">
-                    <img src="images/picturelocation2.png" alt="Map View" class="screenshot">
-                    <img src="images/picturelocation3.png" alt="Photo Details" class="screenshot">
-                </div>
-            </section>
-            <section class="app-details">
-                <h2>Features</h2>
+    <base href="/harrison-showcase/" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>PictureLocation App</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>PictureLocation App</h1>
+        <p>Tag and organize your photos by location</p>
+    </header>
+    <main>
+        <a href="../index.html" class="button-accent" style="margin-bottom:2rem;max-width:200px;">← Back to Home</a>
+        <section class="container" style="margin-bottom:2.5rem; background: #fff; border-radius: 1.5rem; box-shadow: 0 8px 32px #005A9C18; padding: 2.5rem 2rem;">
+            <img src="images/picturelocation1.png" alt="PictureLocation App Screenshot" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; margin-bottom:2rem; display:block; margin-left:auto; margin-right:auto;">
+            <p>
+                <strong>PictureLocation</strong> is a simple and privacy-focused mobile app that helps you organize your photos by where they were taken. Snap a photo, and PictureLocation automatically tags it with GPS info so you can browse memories by place.
+            </p>
+            <div style="background:linear-gradient(90deg,#00C8B4 0%,#39FF14 100%);border-radius:8px;padding:1.4rem 1.5rem;margin:2rem 0 1.5rem 0;">
+                <h2 style="margin-top:0;color:#232F34;">Key Features</h2>
                 <ul>
-                    <li>Automatically tags photos with GPS location</li>
-                    <li>Organize and search photos by place</li>
-                    <li>Interactive map view of your photo locations</li>
+                    <li>Automatically tags photos with location data</li>
+                    <li>Browse and organize photos by place</li>
                     <li>Simple, privacy-focused design</li>
+                    <li>Fast search and smart albums</li>
+                    <li>Lightweight and user-friendly</li>
                 </ul>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
-        </footer>
+            </div>
+            <h2>App Demonstration</h2>
+            <div style="margin-bottom:1.5rem;">
+                <img src="images/picturelocation2.png" alt="App Screenshot 2" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; margin-bottom:1rem; display:block; margin-left:auto; margin-right:auto;">
+                <img src="images/picturelocation3.png" alt="App Screenshot 3" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; display:block; margin-left:auto; margin-right:auto;">
+            </div>
+            <p>
+                Want to learn more or see the code?<br>
+                <a href="https://github.com/yourusername/picturelocationapp" target="_blank" class="button-accent" style="max-width:240px;display:inline-block;margin-top:1rem;">View on GitHub</a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
+    </footer>
 </body>
 </html>
