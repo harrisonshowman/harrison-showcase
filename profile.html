@@ -4,40 +4,432 @@
     <base href="/harrison-showcase/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harrison Showman - Profile</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <title>Harrison Showman - About Me</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/harrison-showcase/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/harrison-showcase/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/harrison-showcase/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/harrison-showcase/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="/harrison-showcase/site.webmanifest" />
+    
+    <style>
+        body { margin: 0; background: #0a0a0a; }
+        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+        .loader-inner { width: 60px; height: 60px; border: 3px solid rgba(57, 255, 20, 0.3); border-top-color: #39FF14; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    
     <link rel="stylesheet" href="/harrison-showcase/style.css">
 </head>
 <body>
-    <header>
-        <h1>Profile</h1>
-        <p>About Harrison Showman</p>
-    </header>
-    <main>
-        <a href="/harrison-showcase/index.html" class="button-accent" style="margin-bottom:2rem;max-width:200px;">← Back to Home</a>
-        <section class="container" style="margin-bottom:2.5rem; background: #fff; border-radius: 1.5rem; box-shadow: 0 8px 32px #005A9C18; padding: 2.5rem 2rem; max-width:600px;">
-            <h2 style="margin-top:0; color:#005A9C;">Harrison Showman</h2>
-            <p>
-                Hi, I'm Harrison Showman, a passionate software developer focused on building modern, user-friendly web applications. I love solving complex problems, learning new technologies, and collaborating with others to create impactful digital experiences.
-            </p>
-            <ul style="margin:1.5rem 0;">
-                <li><strong>Specialties:</strong> HTML, CSS, JavaScript, React, Swift, and more</li>
-                <li><strong>Favorite Projects:</strong> Mobile apps, games, and interactive tools</li>
-                <li><strong>Location:</strong> Seattle, WA</li>
-            </ul>
-            <div style="margin-top:2rem;">
-                <a href="mailto:your@email.com" class="button-accent" style="max-width:220px;display:inline-block;">Contact Me</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
-    </footer>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="About Me">About Me</h1>
+            <p>The person behind the pixels</p>
+        </header>
+        
+        <main>
+            <a href="/harrison-showcase/index.html" class="button-accent" style="margin-bottom: 3rem;">
+                <span>← Back to Projects</span>
+            </a>
+            
+            <section class="profile-container">
+                <div class="profile-content">
+                    <div class="profile-intro">
+                        <h2 class="profile-name">Harrison Showman</h2>
+                        <p class="profile-title">Creative Developer & Digital Craftsman</p>
+                    </div>
+                    
+                    <div class="profile-bio">
+                        <p>
+                            Hi! I'm Harrison, a passionate developer who loves building at the intersection of technology and creativity. 
+                            I specialize in crafting modern web applications, immersive mobile experiences, and interactive digital solutions 
+                            that not only work beautifully but also spark joy.
+                        </p>
+                        <p>
+                            My journey in tech is driven by curiosity and a constant desire to push boundaries. Whether it's creating 
+                            smooth animations, building performant applications, or exploring new frameworks, I'm always excited to 
+                            tackle challenges that help me grow as a developer.
+                        </p>
+                    </div>
+                    
+                    <div class="skills-section">
+                        <h3>Technical Arsenal</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Languages</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">TypeScript</span>
+                                    <span class="skill-tag">Swift</span>
+                                    <span class="skill-tag">C#</span>
+                                    <span class="skill-tag">Python</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Next.js</span>
+                                    <span class="skill-tag">Vue.js</span>
+                                    <span class="skill-tag">CSS/SASS</span>
+                                    <span class="skill-tag">Three.js</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Mobile & Games</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">React Native</span>
+                                    <span class="skill-tag">Flutter</span>
+                                    <span class="skill-tag">Unity</span>
+                                    <span class="skill-tag">SwiftUI</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools & More</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">Firebase</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">Blender</span>
+                                    <span class="skill-tag">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-section">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always excited to collaborate on interesting projects or just chat about tech!</p>
+                        <div class="contact-links">
+                            <a href="mailto:harrison@example.com" class="contact-link">
+                                <span class="icon">📧</span>
+                                <span>Email Me</span>
+                            </a>
+                            <a href="https://github.com/harrisonshowman" target="_blank" class="contact-link">
+                                <span class="icon">🐙</span>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com/in/harrisonshowman" target="_blank" class="contact-link">
+                                <span class="icon">💼</span>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="fun-facts">
+                        <h3>Random Bits</h3>
+                        <ul class="facts-list">
+                            <li><span class="fact-icon">📍</span> Based in Seattle, WA</li>
+                            <li><span class="fact-icon">☕</span> Powered by coffee and curiosity</li>
+                            <li><span class="fact-icon">🎮</span> Game dev enthusiast</li>
+                            <li><span class="fact-icon">🌱</span> Always learning something new</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Remove loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').style.display = 'none';
+            }, 1000);
+        });
+        
+        // Cursor glow effect
+        const cursor = document.querySelector('.cursor-glow');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            const distX = mouseX - cursorX;
+            const distY = mouseY - cursorY;
+            
+            cursorX += distX * 0.1;
+            cursorY += distY * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // Smooth page transitions
+        document.querySelectorAll('a[href^="/harrison-showcase/"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                
+                document.body.style.opacity = '0';
+                document.body.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+        });
+        
+        // Animate skill tags on hover
+        document.querySelectorAll('.skill-tag, .contact-link').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Parallax for orbs
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.orb');
+            
+            orbs.forEach((orb, index) => {
+                const speed = 0.5 + (index * 0.2);
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+    
+    <style>
+        /* Profile-specific styles */
+        .profile-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+        
+        .profile-bio {
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .profile-bio p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-section {
+            margin-bottom: 3rem;
+        }
+        
+        .skills-section h3 {
+            font-size: 1.8rem;
+            color: #39FF14;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category h4 {
+            color: #00C8B4;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            color: #39FF14;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        
+        .skill-tag:hover {
+            background: rgba(57, 255, 20, 0.2);
+            box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+        }
+        
+        .contact-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-section h3 {
+            font-size: 1.8rem;
+            color: #39FF14;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .contact-link:hover {
+            background: rgba(57, 255, 20, 0.1);
+            border-color: rgba(57, 255, 20, 0.3);
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+        }
+        
+        .contact-link .icon {
+            font-size: 1.2rem;
+        }
+        
+        .fun-facts {
+            margin-top: 3rem;
+        }
+        
+        .fun-facts h3 {
+            font-size: 1.8rem;
+            color: #39FF14;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .facts-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .facts-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .fact-icon {
+            font-size: 1.2rem;
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translateX(-2px);
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            transform: translateX(2px);
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { opacity: 0; }
+            95% { opacity: 0; }
+            96% { opacity: 1; }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { opacity: 0; }
+            97% { opacity: 0; }
+            98% { opacity: 1; }
+        }
+        
+        header:hover .glitch::before,
+        header:hover .glitch::after {
+            animation-duration: 0.2s;
+        }
+        
+        body {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+    </style>
 </body>
 </html>
