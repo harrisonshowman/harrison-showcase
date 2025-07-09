@@ -4,51 +4,848 @@
     <base href="/harrison-showcase/" />
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Game Development in Unity</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <title>Game Development - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="site.webmanifest" />
+    
+    <style>
+        body { margin: 0; background: #0a0a0a; }
+        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+        .loader-inner { width: 60px; height: 60px; border: 3px solid rgba(57, 255, 20, 0.3); border-top-color: #39FF14; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    
     <link rel="stylesheet" href="/harrison-showcase/style.css">
 </head>
 <body>
-    <header>
-        <h1>Game Development in Unity</h1>
-        <p>Designing and building interactive games with Unity and C#</p>
-    </header>
-    <main>
-        <a href="../index.html" class="button-accent" style="margin-bottom:2rem;max-width:200px;">← Back to Home</a>
-        <section class="container" style="margin-bottom:2.5rem; background: #fff; border-radius: 1.5rem; box-shadow: 0 8px 32px #005A9C18; padding: 2.5rem 2rem;">
-            <img src="images/unity-game-screenshot.png" alt="Unity Game Screenshot" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; margin-bottom:2rem; display:block; margin-left:auto; margin-right:auto;">
-            <p>
-                <strong>Game Development in Unity</strong> is all about creating fun, interactive experiences using the Unity engine and C#. My projects focus on polished gameplay, responsive UI, and smooth performance across devices.
-            </p>
-            <div style="background:linear-gradient(90deg,#00C8B4 0%,#39FF14 100%);border-radius:8px;padding:1.4rem 1.5rem;margin:2rem 0 1.5rem 0;">
-                <h2 style="margin-top:0;color:#232F34;">Highlights</h2>
-                <ul>
-                    <li>Gameplay mechanics and player controls</li>
-                    <li>Custom UI and in-game menus</li>
-                    <li>Performance optimization for smooth play</li>
-                    <li>Animation integration for characters and effects</li>
-                    <li>Iterative design and rapid prototyping</li>
-                </ul>
-            </div>
-            <h2>App Demonstration</h2>
-            <div style="margin-bottom:1.5rem;">
-                <!-- Replace the src below with your real demo screenshots or gifs -->
-                <img src="images/unity-game-demo.png" alt="Unity Game Demo" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; display:block; margin-left:auto; margin-right:auto;">
-            </div>
-            <p>
-                Want to dive into the code or see more?<br>
-                <a href="https://github.com/yourusername/unitygameproject" target="_blank" class="button-accent" style="max-width:240px;display:inline-block;margin-top:1rem;">View on GitHub</a>
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
-    </footer>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Game Development">Game Development</h1>
+            <p>Building immersive worlds with Unity and C#</p>
+        </header>
+        
+        <main>
+            <a href="../index.html" class="button-accent" style="margin-bottom: 3rem;">
+                <span>← Back to Projects</span>
+            </a>
+            
+            <section class="project-showcase">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="project-title-large">Creating Interactive Experiences That Captivate Players</h2>
+                            <p class="project-subtitle">
+                                From indie puzzlers to action-packed adventures, I specialize in developing engaging games 
+                                with Unity and C#. My focus is on crafting polished gameplay mechanics, intuitive UI, and 
+                                optimized performance across all platforms.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Unity 2022 LTS</span>
+                                <span class="tech-badge">C#</span>
+                                <span class="tech-badge">Shader Graph</span>
+                                <span class="tech-badge">DOTS</span>
+                                <span class="tech-badge">XR Toolkit</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="game-preview">
+                                <img src="images/unity-game-screenshot.png" alt="Unity Game Development" />
+                                <div class="play-button">▶</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <h3 class="section-title">Development Expertise</h3>
+                    <div class="features-grid">
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎮</div>
+                            <h4>Gameplay Programming</h4>
+                            <p>Smooth character controllers, physics-based interactions, and responsive combat systems.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🧩</div>
+                            <h4>Systems Design</h4>
+                            <p>Modular architecture with inventory systems, skill trees, and progression mechanics.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎨</div>
+                            <h4>Visual Effects</h4>
+                            <p>Custom shaders, particle systems, and post-processing for stunning visual experiences.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">📱</div>
+                            <h4>Cross-Platform</h4>
+                            <p>Optimized builds for PC, mobile, console, and VR/AR platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="games-showcase">
+                    <h3 class="section-title">Featured Games</h3>
+                    <div class="games-grid">
+                        <div class="game-card">
+                            <div class="game-image">
+                                <img src="images/game-cosmic-quest.png" alt="Cosmic Quest" />
+                                <div class="game-badges">
+                                    <span class="platform-badge">PC</span>
+                                    <span class="platform-badge">Mobile</span>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h4>Cosmic Quest</h4>
+                                <p>A space exploration RPG with procedural planets and dynamic storytelling.</p>
+                                <div class="game-stats">
+                                    <span>⭐ 4.8/5</span>
+                                    <span>📥 50K+ Downloads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-image">
+                                <img src="images/game-puzzle-dimensions.png" alt="Puzzle Dimensions" />
+                                <div class="game-badges">
+                                    <span class="platform-badge">Mobile</span>
+                                    <span class="platform-badge">WebGL</span>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h4>Puzzle Dimensions</h4>
+                                <p>Mind-bending 3D puzzles with perspective-shifting mechanics.</p>
+                                <div class="game-stats">
+                                    <span>🏆 Best Puzzle 2024</span>
+                                    <span>👥 100K+ Players</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-image">
+                                <img src="images/game-neon-runners.png" alt="Neon Runners" />
+                                <div class="game-badges">
+                                    <span class="platform-badge">PC</span>
+                                    <span class="platform-badge">Console</span>
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <h4>Neon Runners</h4>
+                                <p>Fast-paced cyberpunk racing with procedural track generation.</p>
+                                <div class="game-stats">
+                                    <span>💯 Metacritic 85</span>
+                                    <span>🎮 Steam Featured</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technical-showcase">
+                    <h3 class="section-title">Technical Innovations</h3>
+                    <div class="tech-innovations">
+                        <div class="innovation-card">
+                            <div class="innovation-header">
+                                <span class="innovation-icon">🚀</span>
+                                <h4>Performance Optimization</h4>
+                            </div>
+                            <p>Implemented custom LOD systems and object pooling to maintain 60+ FPS on all target devices.</p>
+                            <div class="code-preview">
+                                <code>// Dynamic LOD switching based on performance metrics
+UpdateLOD(distance, frameTime);</code>
+                            </div>
+                        </div>
+                        <div class="innovation-card">
+                            <div class="innovation-header">
+                                <span class="innovation-icon">🤖</span>
+                                <h4>Advanced AI Systems</h4>
+                            </div>
+                            <p>Behavior trees and state machines for complex enemy AI with dynamic difficulty adjustment.</p>
+                            <div class="code-preview">
+                                <code>// AI decision making with utility theory
+float utility = CalculateActionUtility(context);</code>
+                            </div>
+                        </div>
+                        <div class="innovation-card">
+                            <div class="innovation-header">
+                                <span class="innovation-icon">🌐</span>
+                                <h4>Multiplayer Architecture</h4>
+                            </div>
+                            <p>Netcode implementation with client-side prediction and lag compensation for smooth online play.</p>
+                            <div class="code-preview">
+                                <code>// Client prediction with server reconciliation
+ReconcilePosition(serverState, clientState);</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="development-process">
+                    <h3 class="section-title">Development Pipeline</h3>
+                    <div class="process-timeline">
+                        <div class="process-item">
+                            <div class="process-number">01</div>
+                            <div class="process-content">
+                                <h4>Prototyping</h4>
+                                <p>Rapid iteration on core mechanics using Unity's ProBuilder and visual scripting.</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">02</div>
+                            <div class="process-content">
+                                <h4>Production</h4>
+                                <p>Agile development with continuous integration and automated testing pipelines.</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">03</div>
+                            <div class="process-content">
+                                <h4>Polish</h4>
+                                <p>Performance profiling, bug fixing, and adding those crucial game feel touches.</p>
+                            </div>
+                        </div>
+                        <div class="process-item">
+                            <div class="process-number">04</div>
+                            <div class="process-content">
+                                <h4>Launch</h4>
+                                <p>Multi-platform deployment with analytics integration and live-ops support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-showcase">
+                    <h3 class="section-title">Unity Skillset</h3>
+                    <div class="skills-matrix">
+                        <div class="skill-item">
+                            <div class="skill-name">C# Programming</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Unity Engine</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Shader Programming</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Multiplayer/Networking</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">VR/AR Development</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Let's Build Something Amazing</h3>
+                    <p class="cta-subtitle">Check out the source code or play the demos</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/harrisonshowman/unity-projects" target="_blank" class="button-accent">
+                            <span>View Source Code</span>
+                        </a>
+                        <a href="https://harrisonshowman.itch.io" target="_blank" class="button-secondary">
+                            <span>Play Demos</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Remove loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').style.display = 'none';
+            }, 1000);
+        });
+        
+        // Cursor glow
+        const cursor = document.querySelector('.cursor-glow');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            const distX = mouseX - cursorX;
+            const distY = mouseY - cursorY;
+            
+            cursorX += distX * 0.1;
+            cursorY += distY * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // 3D tilt for cards
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+        
+        // Smooth transitions
+        document.querySelectorAll('a[href^="/harrison-showcase/"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                
+                document.body.style.opacity = '0';
+                document.body.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+        });
+        
+        // Parallax scrolling
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.orb');
+            
+            orbs.forEach((orb, index) => {
+                const speed = 0.5 + (index * 0.2);
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.skill-progress');
+                    if (progressBar) {
+                        progressBar.style.animation = 'fillProgress 1.5s ease-out forwards';
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.skill-item').forEach(item => {
+            skillObserver.observe(item);
+        });
+        
+        // Play button interaction
+        const playButton = document.querySelector('.play-button');
+        if (playButton) {
+            playButton.addEventListener('click', () => {
+                alert('Demo gameplay video would play here!');
+            });
+        }
+    </script>
+    
+    <style>
+        /* Project specific styles */
+        .project-showcase {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero-section {
+            margin-bottom: 5rem;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .project-title-large {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech-badge {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            color: #39FF14;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .game-preview {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        
+        .game-preview img {
+            width: 100%;
+            display: block;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(57, 255, 20, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #0a0a0a;
+            transition: all 0.3s;
+        }
+        
+        .game-preview:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: #39FF14;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #39FF14 0%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(57, 255, 20, 0.3);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: grayscale(0.3);
+            transition: filter 0.3s;
+        }
+        
+        .feature-card:hover .feature-icon {
+            filter: grayscale(0);
+        }
+        
+        /* Games Grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .game-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.2);
+            border-color: rgba(57, 255, 20, 0.3);
+        }
+        
+        .game-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .game-card:hover .game-image img {
+            transform: scale(1.1);
+        }
+        
+        .game-badges {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .platform-badge {
+            background: rgba(0, 0, 0, 0.7);
+            color: #39FF14;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .game-info {
+            padding: 1.5rem;
+        }
+        
+        .game-info h4 {
+            color: #39FF14;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .game-info p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .game-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Technical Innovations */
+        .tech-innovations {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .innovation-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .innovation-card:hover {
+            border-color: rgba(57, 255, 20, 0.3);
+            transform: translateX(10px);
+        }
+        
+        .innovation-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .innovation-icon {
+            font-size: 2rem;
+        }
+        
+        .innovation-header h4 {
+            color: #00C8B4;
+            font-size: 1.3rem;
+        }
+        
+        .code-preview {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        
+        .code-preview code {
+            color: #39FF14;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        /* Process Timeline */
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .process-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .process-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #39FF14 0%, #00C8B4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0a0a0a;
+        }
+        
+        .process-content h4 {
+            color: #39FF14;
+            margin-bottom: 0.5rem;
+        }
+        
+        .process-content p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+        
+        /* Skills Matrix */
+        .skills-matrix {
+            margin-bottom: 5rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .skill-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #39FF14 0%, #00C8B4 100%);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+        
+        @keyframes fillProgress {
+            from { width: 0; }
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .button-secondary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #39FF14;
+            text-decoration: none;
+            border: 2px solid #39FF14;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .button-secondary:hover {
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(57, 255, 20, 0.3);
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translateX(-2px);
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            transform: translateX(2px);
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { opacity: 0; }
+            95% { opacity: 0; }
+            96% { opacity: 1; }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { opacity: 0; }
+            97% { opacity: 0; }
+            98% { opacity: 1; }
+        }
+        
+        header:hover .glitch::before,
+        header:hover .glitch::after {
+            animation-duration: 0.2s;
+        }
+        
+        body {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>

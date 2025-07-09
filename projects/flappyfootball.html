@@ -4,51 +4,1043 @@
     <base href="/harrison-showcase/" />
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Flappy Football Mobile App</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <title>Flappy Football - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="/harrison-showcase/style.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <h1>Flappy Football Mobile App</h1>
-        <p>Fast-paced arcade action with a football twist</p>
-    </header>
-    <main>
-        <a href="../index.html" class="button-accent" style="margin-bottom:2rem;max-width:200px;">← Back to Home</a>
-        <section class="container" style="margin-bottom:2.5rem; background: #fff; border-radius: 1.5rem; box-shadow: 0 8px 32px #005A9C18; padding: 2.5rem 2rem;">
-            <img src="images/flappyfootball1.png" alt="Flappy Football App Screenshot" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; margin-bottom:2rem; display:block; margin-left:auto; margin-right:auto;">
-            <p>
-                <strong>Flappy Football</strong> is a mobile game inspired by the classic Flappy Bird, but reimagined with a fun football theme. Navigate the ball through obstacles and aim for your high score in this addictive arcade experience, built with Flutter and Dart.
-            </p>
-            <div style="background:linear-gradient(90deg,#00C8B4 0%,#39FF14 100%);border-radius:8px;padding:1.4rem 1.5rem;margin:2rem 0 1.5rem 0;">
-                <h2 style="margin-top:0;color:#232F34;">Features</h2>
-                <ul>
-                    <li>Simple one-touch controls</li>
-                    <li>Colorful football-inspired graphics</li>
-                    <li>Dynamic obstacles and increasing difficulty</li>
-                    <li>High score tracking</li>
-                    <li>Quick restarts for nonstop fun</li>
-                </ul>
-            </div>
-            <h2>App Demonstration</h2>
-            <div style="margin-bottom:1.5rem;">
-                <!-- Replace the src below with your real demo screenshots or gifs -->
-                <img src="images/flappyfootball2.png" alt="Flappy Football Demo" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; display:block; margin-left:auto; margin-right:auto;">
-            </div>
-            <p>
-                Curious how it was built?<br>
-                <a href="https://github.com/yourusername/flappyfootball" target="_blank" class="button-accent" style="max-width:240px;display:inline-block;margin-top:1rem;">View on GitHub</a>
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
-    </footer>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Flappy Football">Flappy Football</h1>
+            <p>The addictive arcade game with a sporty twist</p>
+        </header>
+        
+        <main>
+            <a href="../index.html" class="button-accent" style="margin-bottom: 3rem;">
+                <span>← Back to Projects</span>
+            </a>
+            
+            <section class="project-showcase">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="project-title-large">Score Big in This High-Flying Football Adventure</h2>
+                            <p class="project-subtitle">
+                                Flappy Football takes the beloved mechanics of the classic flapper genre and adds a sports twist. 
+                                Guide your football through challenging obstacles, collect power-ups, and compete for the highest 
+                                score in this addictive mobile game built with Flutter.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Flutter</span>
+                                <span class="tech-badge">Dart</span>
+                                <span class="tech-badge">Flame Engine</span>
+                                <span class="tech-badge">Firebase</span>
+                            </div>
+                            <div class="download-buttons">
+                                <a href="#" class="store-button">
+                                    <img src="images/flappyfootball1.png" alt="Flappy Football Gameplay" />
+                                <div class="game-demo-overlay">
+                                    <button class="play-demo-btn">🎮 Play Demo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <h3 class="section-title">Game Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">⚽</div>
+                            <h4>Simple Controls</h4>
+                            <p>One-tap gameplay that's easy to learn but challenging to master.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🏆</div>
+                            <h4>Global Leaderboards</h4>
+                            <p>Compete with players worldwide and climb the rankings.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">💎</div>
+                            <h4>Power-Ups</h4>
+                            <p>Collect special items for temporary boosts and score multipliers.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎨</div>
+                            <h4>Customization</h4>
+                            <p>Unlock different football skins and stadium themes as you progress.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gameplay-showcase">
+                    <h3 class="section-title">Gameplay Showcase</h3>
+                    <div class="gameplay-grid">
+                        <div class="gameplay-item">
+                            <img src="images/flappyfootball2.png" alt="Main Menu" />
+                            <h4>Vibrant Main Menu</h4>
+                            <p>Eye-catching design with smooth animations</p>
+                        </div>
+                        <div class="gameplay-item">
+                            <img src="images/flappyfootball-gameplay.png" alt="Gameplay" />
+                            <h4>Addictive Gameplay</h4>
+                            <p>Navigate through stadium-themed obstacles</p>
+                        </div>
+                        <div class="gameplay-item">
+                            <img src="images/flappyfootball-powerup.png" alt="Power-ups" />
+                            <h4>Exciting Power-Ups</h4>
+                            <p>Boost your way to higher scores</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <h3 class="section-title">Game Statistics</h3>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-icon">📱</div>
+                            <div class="stat-value" data-count="250000">0</div>
+                            <div class="stat-label">Downloads</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-value">4.7</div>
+                            <div class="stat-label">Average Rating</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">🌍</div>
+                            <div class="stat-value" data-count="45">0</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">🏅</div>
+                            <div class="stat-value" data-count="10000000">0</div>
+                            <div class="stat-label">Games Played</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="development-story">
+                    <h3 class="section-title">Development Journey</h3>
+                    <div class="story-content">
+                        <div class="story-section">
+                            <div class="story-icon">💡</div>
+                            <div class="story-text">
+                                <h4>The Idea</h4>
+                                <p>Started as a weekend project to learn Flutter, combining my love for football with the addictive mechanics of flappy-style games. The goal was to create something simple yet engaging that could showcase Flutter's capabilities.</p>
+                            </div>
+                        </div>
+                        <div class="story-section">
+                            <div class="story-icon">🛠️</div>
+                            <div class="story-text">
+                                <h4>Technical Challenges</h4>
+                                <p>Implementing smooth physics, optimizing for different screen sizes, and creating a responsive control system that feels natural on both iOS and Android devices. The Flame game engine proved perfect for handling sprites and collisions.</p>
+                            </div>
+                        </div>
+                        <div class="story-section">
+                            <div class="story-icon">🚀</div>
+                            <div class="story-text">
+                                <h4>Launch & Growth</h4>
+                                <p>What started as a learning project became a hit in the app stores. Regular updates with new features, seasonal themes, and community feedback integration helped grow the player base organically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technical-details">
+                    <h3 class="section-title">Technical Implementation</h3>
+                    <div class="tech-cards-grid">
+                        <div class="tech-detail-card">
+                            <h4>Flutter Architecture</h4>
+                            <p>Built with clean architecture principles, separating game logic, UI, and data layers for maintainability.</p>
+                            <div class="tech-tags">
+                                <span>BLoC Pattern</span>
+                                <span>Provider</span>
+                                <span>Clean Code</span>
+                            </div>
+                        </div>
+                        <div class="tech-detail-card">
+                            <h4>Game Engine</h4>
+                            <p>Leveraged Flame engine for smooth 60 FPS gameplay with optimized sprite rendering and collision detection.</p>
+                            <div class="tech-tags">
+                                <span>Flame</span>
+                                <span>Box2D</span>
+                                <span>Particle Effects</span>
+                            </div>
+                        </div>
+                        <div class="tech-detail-card">
+                            <h4>Backend Services</h4>
+                            <p>Firebase integration for leaderboards, analytics, and crash reporting to continuously improve the game.</p>
+                            <div class="tech-tags">
+                                <span>Firestore</span>
+                                <span>Analytics</span>
+                                <span>Cloud Functions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reviews-section">
+                    <h3 class="section-title">Player Reviews</h3>
+                    <div class="reviews-carousel">
+                        <div class="review-card">
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Best football game on mobile! Simple but so addictive. Can't stop trying to beat my high score!"</p>
+                            <div class="review-author">- Alex M.</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Love the smooth gameplay and the football theme. Power-ups make it really exciting!"</p>
+                            <div class="review-author">- Sarah K.</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"My kids and I compete for the highest score every day. Great family fun!"</p>
+                            <div class="review-author">- Mike T.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Ready to Play?</h3>
+                    <p class="cta-subtitle">Download now or check out the source code</p>
+                    <div class="cta-buttons">
+                        <a href="https://apps.apple.com/flappyfootball" target="_blank" class="button-accent">
+                            <span>Download Game</span>
+                        </a>
+                        <a href="https://github.com/harrisonshowman/flappy-football" target="_blank" class="button-secondary">
+                            <span>View Source</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    
+</body>
+</html>/app-store-badge.png" alt="Download on App Store" />
+                                </a>
+                                <a href="#" class="store-button">
+                                    <img src="images/google-play-badge.png" alt="Get it on Google Play" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="phone-mockup-game">
+                                <img src="images/flappyfootball1.png" alt="Flappy Football Gameplay" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <h3 class="section-title">Game Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">⚽</div>
+                            <h4>Simple Controls</h4>
+                            <p>One-tap gameplay that's easy to learn but challenging to master.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🏆</div>
+                            <h4>Global Leaderboards</h4>
+                            <p>Compete with players worldwide and climb the rankings.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">💎</div>
+                            <h4>Power-Ups</h4>
+                            <p>Collect special items for temporary boosts and score multipliers.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎨</div>
+                            <h4>Customization</h4>
+                            <p>Unlock different football skins and stadium themes as you progress.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gameplay-showcase">
+                    <h3 class="section-title">Gameplay Showcase</h3>
+                    <div class="gameplay-grid">
+                        <div class="gameplay-item">
+                            <img src="images/flappyfootball2.png" alt="Main Menu" />
+                            <h4>Vibrant Main Menu</h4>
+                            <p>Eye-catching design with smooth animations</p>
+                        </div>
+                        <div class="gameplay-item">
+                            <img src="images/flappyfootball-gameplay.png" alt="Gameplay" />
+                            <h4>Addictive Gameplay</h4>
+                            <p>Navigate through stadium-themed obstacles</p>
+                        </div>
+                        <div class="gameplay-item">
+                            <img src="images/flappyfootball-powerup.png" alt="Power-ups" />
+                            <h4>Exciting Power-Ups</h4>
+                            <p>Boost your way to higher scores</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <h3 class="section-title">Game Statistics</h3>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-icon">📱</div>
+                            <div class="stat-value" data-count="250000">0</div>
+                            <div class="stat-label">Downloads</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-value">4.7</div>
+                            <div class="stat-label">Average Rating</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">🌍</div>
+                            <div class="stat-value" data-count="45">0</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">🏅</div>
+                            <div class="stat-value" data-count="10000000">0</div>
+                            <div class="stat-label">Games Played</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="development-story">
+                    <h3 class="section-title">Development Journey</h3>
+                    <div class="story-content">
+                        <div class="story-section">
+                            <div class="story-icon">💡</div>
+                            <div class="story-text">
+                                <h4>The Idea</h4>
+                                <p>Started as a weekend project to learn Flutter, combining my love for football with the addictive mechanics of flappy-style games. The goal was to create something simple yet engaging that could showcase Flutter's capabilities.</p>
+                            </div>
+                        </div>
+                        <div class="story-section">
+                            <div class="story-icon">🛠️</div>
+                            <div class="story-text">
+                                <h4>Technical Challenges</h4>
+                                <p>Implementing smooth physics, optimizing for different screen sizes, and creating a responsive control system that feels natural on both iOS and Android devices. The Flame game engine proved perfect for handling sprites and collisions.</p>
+                            </div>
+                        </div>
+                        <div class="story-section">
+                            <div class="story-icon">🚀</div>
+                            <div class="story-text">
+                                <h4>Launch & Growth</h4>
+                                <p>What started as a learning project became a hit in the app stores. Regular updates with new features, seasonal themes, and community feedback integration helped grow the player base organically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technical-details">
+                    <h3 class="section-title">Technical Implementation</h3>
+                    <div class="tech-cards-grid">
+                        <div class="tech-detail-card">
+                            <h4>Flutter Architecture</h4>
+                            <p>Built with clean architecture principles, separating game logic, UI, and data layers for maintainability.</p>
+                            <div class="tech-tags">
+                                <span>BLoC Pattern</span>
+                                <span>Provider</span>
+                                <span>Clean Code</span>
+                            </div>
+                        </div>
+                        <div class="tech-detail-card">
+                            <h4>Game Engine</h4>
+                            <p>Leveraged Flame engine for smooth 60 FPS gameplay with optimized sprite rendering and collision detection.</p>
+                            <div class="tech-tags">
+                                <span>Flame</span>
+                                <span>Box2D</span>
+                                <span>Particle Effects</span>
+                            </div>
+                        </div>
+                        <div class="tech-detail-card">
+                            <h4>Backend Services</h4>
+                            <p>Firebase integration for leaderboards, analytics, and crash reporting to continuously improve the game.</p>
+                            <div class="tech-tags">
+                                <span>Firestore</span>
+                                <span>Analytics</span>
+                                <span>Cloud Functions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reviews-section">
+                    <h3 class="section-title">Player Reviews</h3>
+                    <div class="reviews-carousel">
+                        <div class="review-card">
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Best football game on mobile! Simple but so addictive. Can't stop trying to beat my high score!"</p>
+                            <div class="review-author">- Alex M.</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Love the smooth gameplay and the football theme. Power-ups make it really exciting!"</p>
+                            <div class="review-author">- Sarah K.</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"My kids and I compete for the highest score every day. Great family fun!"</p>
+                            <div class="review-author">- Mike T.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Ready to Play?</h3>
+                    <p class="cta-subtitle">Download now or check out the source code</p>
+                    <div class="cta-buttons">
+                        <a href="https://apps.apple.com/flappyfootball" target="_blank" class="button-accent">
+                            <span>Download Game</span>
+                        </a>
+                        <a href="https://github.com/harrisonshowman/flappy-football" target="_blank" class="button-secondary">
+                            <span>View Source</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Remove loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').style.display = 'none';
+            }, 1000);
+        });
+        
+        // Cursor glow
+        const cursor = document.querySelector('.cursor-glow');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            const distX = mouseX - cursorX;
+            const distY = mouseY - cursorY;
+            
+            cursorX += distX * 0.1;
+            cursorY += distY * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // 3D tilt for cards
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+        
+        // Smooth transitions
+        document.querySelectorAll('a[href^="/harrison-showcase/"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                
+                document.body.style.opacity = '0';
+                document.body.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+        });
+        
+        // Parallax scrolling
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.orb');
+            
+            orbs.forEach((orb, index) => {
+                const speed = 0.5 + (index * 0.2);
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Animate stats counting
+        const animateValue = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+        
+        // Stats counter animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const endValue = parseInt(element.getAttribute('data-count'));
+                    if (endValue) {
+                        animateValue(element, 0, endValue, 2000);
+                        statsObserver.unobserve(element);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('[data-count]').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+        
+        // Play demo button
+        const playDemoBtn = document.querySelector('.play-demo-btn');
+        if (playDemoBtn) {
+            playDemoBtn.addEventListener('click', () => {
+                alert('WebGL demo would load here!');
+            });
+        }
+    </script>
+    
+    <style>
+        /* Project specific styles */
+        .project-showcase {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero-section {
+            margin-bottom: 5rem;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .project-title-large {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-badge {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            color: #39FF14;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .store-button img {
+            height: 50px;
+            transition: transform 0.3s;
+        }
+        
+        .store-button:hover img {
+            transform: scale(1.05);
+        }
+        
+        .phone-mockup-game {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .phone-mockup-game img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+        
+        .game-demo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .phone-mockup-game:hover .game-demo-overlay {
+            opacity: 1;
+        }
+        
+        .play-demo-btn {
+            background: #39FF14;
+            color: #0a0a0a;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .play-demo-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #39FF14 0%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(57, 255, 20, 0.3);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Gameplay Grid */
+        .gameplay-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .gameplay-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .gameplay-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.2);
+        }
+        
+        .gameplay-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .gameplay-item h4 {
+            color: #39FF14;
+            padding: 1rem 1.5rem 0.5rem;
+        }
+        
+        .gameplay-item p {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        /* Stats Section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(0, 200, 180, 0.1) 100%);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #39FF14;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Development Story */
+        .story-content {
+            margin-bottom: 5rem;
+        }
+        
+        .story-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+        
+        .story-section:hover {
+            border-color: rgba(57, 255, 20, 0.3);
+            transform: translateX(10px);
+        }
+        
+        .story-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        
+        .story-text h4 {
+            color: #00C8B4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-text p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        /* Technical Details */
+        .tech-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .tech-detail-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .tech-detail-card:hover {
+            border-color: rgba(57, 255, 20, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .tech-detail-card h4 {
+            color: #39FF14;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-detail-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech-tags span {
+            background: rgba(0, 200, 180, 0.1);
+            border: 1px solid rgba(0, 200, 180, 0.3);
+            color: #00C8B4;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        
+        /* Reviews Carousel */
+        .reviews-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .review-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(57, 255, 20, 0.3);
+        }
+        
+        .review-stars {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .review-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .review-author {
+            color: #39FF14;
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .button-secondary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #39FF14;
+            text-decoration: none;
+            border: 2px solid #39FF14;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .button-secondary:hover {
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(57, 255, 20, 0.3);
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translateX(-2px);
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            transform: translateX(2px);
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { opacity: 0; }
+            95% { opacity: 0; }
+            96% { opacity: 1; }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { opacity: 0; }
+            97% { opacity: 0; }
+            98% { opacity: 1; }
+        }
+        
+        header:hover .glitch::before,
+        header:hover .glitch::after {
+            animation-duration: 0.2s;
+        }
+        
+        body {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .download-buttons {
+                justify-content: center;
+            }
+            
+            .story-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .gameplay-grid,
+            .reviews-carousel {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>

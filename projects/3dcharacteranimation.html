@@ -4,51 +4,782 @@
     <base href="/harrison-showcase/" />
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>3D Character Animation</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"/>
+    <title>3D Character Animation - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="site.webmanifest" />
+    
+    <style>
+        body { margin: 0; background: #0a0a0a; }
+        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+        .loader-inner { width: 60px; height: 60px; border: 3px solid rgba(57, 255, 20, 0.3); border-top-color: #39FF14; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    
     <link rel="stylesheet" href="/harrison-showcase/style.css">
 </head>
 <body>
-    <header>
-        <h1>3D Character Animation</h1>
-        <p>Lifelike character animation for games and AR/VR experiences</p>
-    </header>
-    <main>
-        <a href="../index.html" class="button-accent" style="margin-bottom:2rem;max-width:200px;">← Back to Home</a>
-        <section class="container" style="margin-bottom:2.5rem; background: #fff; border-radius: 1.5rem; box-shadow: 0 8px 32px #005A9C18; padding: 2.5rem 2rem;">
-            <img src="images/characteranimation1.png" alt="3D Character Animation Screenshot" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; margin-bottom:2rem; display:block; margin-left:auto; margin-right:auto;">
-            <p>
-                <strong>3D Character Animation</strong> showcases my work in creating lifelike digital characters for games and immersive AR/VR experiences. These projects blend artistic skills with technical know-how in Blender and Unity.
-            </p>
-            <div style="background:linear-gradient(90deg,#00C8B4 0%,#39FF14 100%);border-radius:8px;padding:1.4rem 1.5rem;margin:2rem 0 1.5rem 0;">
-                <h2 style="margin-top:0;color:#232F34;">Highlights</h2>
-                <ul>
-                    <li>Rigging and skinning models in Blender</li>
-                    <li>Designing expressive, natural character movement</li>
-                    <li>Integrating custom animations into Unity</li>
-                    <li>Optimizing for real-time game engines</li>
-                    <li>Collaboration with artists and developers</li>
-                </ul>
-            </div>
-            <h2>App Demonstration</h2>
-            <div style="margin-bottom:1.5rem;">
-                <!-- Replace the src below with your real demo screenshots or gifs -->
-                <img src="images/characteranimation2.png" alt="Character Animation Demo" style="width:100%; max-width:350px; border-radius: 12px; box-shadow:0 4px 16px #005A9C22; display:block; margin-left:auto; margin-right:auto;">
-            </div>
-            <p>
-                Want to see the code or process?<br>
-                <a href="https://github.com/yourusername/characteranimation" target="_blank" class="button-accent" style="max-width:240px;display:inline-block;margin-top:1rem;">View on GitHub</a>
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Harrison Showman. All rights reserved.</p>
-    </footer>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="3D Animation">3D Animation</h1>
+            <p>Bringing digital characters to life</p>
+        </header>
+        
+        <main>
+            <a href="../index.html" class="button-accent" style="margin-bottom: 3rem;">
+                <span>← Back to Projects</span>
+            </a>
+            
+            <section class="project-showcase">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="project-title-large">Crafting Lifelike Digital Characters for Immersive Experiences</h2>
+                            <p class="project-subtitle">
+                                From concept to final render, I create expressive 3D character animations that breathe life into 
+                                games, AR/VR experiences, and digital storytelling. Using industry-standard tools like Blender 
+                                and Unity, I focus on creating characters that connect with audiences.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Blender</span>
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">Maya</span>
+                                <span class="tech-badge">Substance Painter</span>
+                                <span class="tech-badge">Mixamo</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="animation-showcase">
+                                <img src="images/characteranimation1.png" alt="3D Character Animation" />
+                                <div class="animation-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <h3 class="section-title">Animation Expertise</h3>
+                    <div class="features-grid">
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎭</div>
+                            <h4>Character Rigging</h4>
+                            <p>Advanced bone systems and IK/FK setups for natural, fluid movement and easy animation control.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎬</div>
+                            <h4>Motion Capture</h4>
+                            <p>Integration and cleanup of mocap data to create realistic human movements and expressions.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎮</div>
+                            <h4>Game-Ready Assets</h4>
+                            <p>Optimized models and animations for real-time rendering in Unity and Unreal Engine.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">✨</div>
+                            <h4>VFX Integration</h4>
+                            <p>Seamless blend of character animation with particle effects and environmental interactions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-section">
+                    <h3 class="section-title">Featured Works</h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="images/character-warrior.png" alt="Fantasy Warrior" />
+                                <div class="portfolio-overlay">
+                                    <h4>Fantasy Warrior</h4>
+                                    <p>High-poly character with 50+ unique animations</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="images/character-robot.png" alt="Sci-Fi Robot" />
+                                <div class="portfolio-overlay">
+                                    <h4>Sci-Fi Mech</h4>
+                                    <p>Procedural animation system for mechanical movements</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="images/character-creature.png" alt="Mythical Creature" />
+                                <div class="portfolio-overlay">
+                                    <h4>Mythical Creature</h4>
+                                    <p>Custom rig for non-humanoid character animation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-section">
+                    <h3 class="section-title">Animation Pipeline</h3>
+                    <div class="pipeline-flow">
+                        <div class="pipeline-step" data-step="1">
+                            <div class="step-icon">📝</div>
+                            <h4>Concept & Reference</h4>
+                            <p>Gathering references and creating concept art to define character personality and movement style.</p>
+                        </div>
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-step" data-step="2">
+                            <div class="step-icon">🗿</div>
+                            <h4>Modeling & Sculpting</h4>
+                            <p>Creating high-quality 3D models with attention to anatomy and deformation requirements.</p>
+                        </div>
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-step" data-step="3">
+                            <div class="step-icon">🦴</div>
+                            <h4>Rigging & Skinning</h4>
+                            <p>Building flexible bone systems and weight painting for natural deformations.</p>
+                        </div>
+                        <div class="pipeline-arrow">→</div>
+                        <div class="pipeline-step" data-step="4">
+                            <div class="step-icon">🎯</div>
+                            <h4>Animation & Polish</h4>
+                            <p>Keyframe animation, motion capture integration, and final polish for production.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technical-section">
+                    <h3 class="section-title">Technical Achievements</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-metric">60 FPS</div>
+                            <div class="achievement-label">Real-time Performance</div>
+                            <p>Optimized animations maintain smooth framerates even on mobile devices</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-metric">< 5MB</div>
+                            <div class="achievement-label">Compressed Assets</div>
+                            <p>Advanced compression techniques without sacrificing animation quality</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-metric">200+</div>
+                            <div class="achievement-label">Animation Library</div>
+                            <p>Extensive collection of reusable animations for rapid prototyping</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-metric">4K</div>
+                            <div class="achievement-label">Texture Resolution</div>
+                            <p>High-resolution textures with PBR materials for photorealistic rendering</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tools-section">
+                    <h3 class="section-title">Tools & Workflow</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <img src="images/blender-logo.png" alt="Blender" />
+                            <h4>Blender</h4>
+                            <p>Primary tool for modeling, rigging, and animation</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="images/unity-logo.png" alt="Unity" />
+                            <h4>Unity</h4>
+                            <p>Real-time rendering and animation state machines</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="images/substance-logo.png" alt="Substance" />
+                            <h4>Substance Suite</h4>
+                            <p>PBR texturing and material creation</p>
+                        </div>
+                        <div class="tool-card">
+                            <img src="images/zbrush-logo.png" alt="ZBrush" />
+                            <h4>ZBrush</h4>
+                            <p>High-poly sculpting and detail work</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Want to See More?</h3>
+                    <p class="cta-subtitle">Check out my animation reel or explore the project files</p>
+                    <div class="cta-buttons">
+                        <a href="https://vimeo.com/harrisonshowman" target="_blank" class="button-accent">
+                            <span>View Demo Reel</span>
+                        </a>
+                        <a href="https://github.com/harrisonshowman/3d-animations" target="_blank" class="button-secondary">
+                            <span>Project Files</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Remove loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').style.display = 'none';
+            }, 1000);
+        });
+        
+        // Cursor glow
+        const cursor = document.querySelector('.cursor-glow');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function animateCursor() {
+            const distX = mouseX - cursorX;
+            const distY = mouseY - cursorY;
+            
+            cursorX += distX * 0.1;
+            cursorY += distY * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // 3D tilt for cards
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+        
+        // Smooth transitions
+        document.querySelectorAll('a[href^="/harrison-showcase/"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                
+                document.body.style.opacity = '0';
+                document.body.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+        });
+        
+        // Parallax scrolling
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.orb');
+            
+            orbs.forEach((orb, index) => {
+                const speed = 0.5 + (index * 0.2);
+                orb.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.pipeline-step, .achievement-card, .portfolio-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+    
+    <style>
+        /* Project specific styles */
+        .project-showcase {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero-section {
+            margin-bottom: 5rem;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .project-title-large {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tech-badge {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            color: #39FF14;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .animation-showcase {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .animation-showcase img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .animation-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(57, 255, 20, 0.2) 50%, transparent 70%);
+            border-radius: 20px;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #39FF14 0%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(57, 255, 20, 0.3);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: grayscale(0.3);
+            transition: filter 0.3s;
+        }
+        
+        .feature-card:hover .feature-icon {
+            filter: grayscale(0);
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s;
+        }
+        
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay h4 {
+            color: #39FF14;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-overlay p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Pipeline Flow */
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+        }
+        
+        .pipeline-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            min-width: 200px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s;
+        }
+        
+        .pipeline-step.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .pipeline-step[data-step="1"] { transition-delay: 0.1s; }
+        .pipeline-step[data-step="2"] { transition-delay: 0.2s; }
+        .pipeline-step[data-step="3"] { transition-delay: 0.3s; }
+        .pipeline-step[data-step="4"] { transition-delay: 0.4s; }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pipeline-arrow {
+            color: #39FF14;
+            font-size: 2rem;
+            margin: 0 1rem;
+        }
+        
+        /* Achievements Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(0, 200, 180, 0.1) 100%);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s;
+        }
+        
+        .achievement-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .achievement-metric {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #39FF14 0%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-label {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+        
+        .tool-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(57, 255, 20, 0.3);
+            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.1);
+        }
+        
+        .tool-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            filter: grayscale(1);
+            transition: filter 0.3s;
+        }
+        
+        .tool-card:hover img {
+            filter: grayscale(0);
+        }
+        
+        .tool-card h4 {
+            color: #39FF14;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tool-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .cta-section h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .button-secondary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #39FF14;
+            text-decoration: none;
+            border: 2px solid #39FF14;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .button-secondary:hover {
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(57, 255, 20, 0.3);
+        }
+        
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffffff 0%, #39FF14 50%, #00C8B4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translateX(-2px);
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            transform: translateX(2px);
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { opacity: 0; }
+            95% { opacity: 0; }
+            96% { opacity: 1; }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { opacity: 0; }
+            97% { opacity: 0; }
+            98% { opacity: 1; }
+        }
+        
+        header:hover .glitch::before,
+        header:hover .glitch::after {
+            animation-duration: 0.2s;
+        }
+        
+        body {
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .pipeline-flow {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pipeline-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
