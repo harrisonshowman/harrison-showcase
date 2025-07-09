@@ -1,13 +1,45 @@
+/* CSS Variables for Theming */
+:root {
+    /* Dark Theme (Default) */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-card: rgba(10, 10, 10, 0.6);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --accent-primary: #39FF14;
+    --accent-secondary: #00C8B4;
+    --border-color: rgba(57, 255, 20, 0.2);
+    --border-hover: rgba(57, 255, 20, 0.6);
+    --shadow-color: rgba(57, 255, 20, 0.15);
+    --gradient-bg: linear-gradient(125deg, #0a0a0a 0%, #1a1a2e 25%, #0f3460 50%, #16213e 75%, #0a0a0a 100%);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --text-primary: #1a1a1a;
+    --text-secondary: rgba(26, 26, 26, 0.7);
+    --accent-primary: #2563eb;
+    --accent-secondary: #0891b2;
+    --border-color: rgba(37, 99, 235, 0.2);
+    --border-hover: rgba(37, 99, 235, 0.6);
+    --shadow-color: rgba(37, 99, 235, 0.15);
+    --gradient-bg: linear-gradient(125deg, #ffffff 0%, #f1f5f9 25%, #e2e8f0 50%, #cbd5e1 75%, #ffffff 100%);
+}
+
 /* Reset and Base Styles */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     min-height: 100vh;
-    background: #0a0a0a;
-    color: #ffffff;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     overflow-x: hidden;
     position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Animated gradient background */
@@ -18,10 +50,11 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(125deg, #0a0a0a 0%, #1a1a2e 25%, #0f3460 50%, #16213e 75%, #0a0a0a 100%);
+    background: var(--gradient-bg);
     background-size: 400% 400%;
     animation: gradientShift 20s ease infinite;
     z-index: -2;
+    transition: background 0.3s ease;
 }
 
 @keyframes gradientShift {
@@ -30,18 +63,49 @@ body::before {
     100% { background-position: 0% 50%; }
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.theme-toggle .icon {
+    font-size: 1.1rem;
+}
+
 .button-accent, button.button-accent, a.button-accent, input.button-accent {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(90deg, #39FF14 0%, #00C8B4 100%);
-    color: #0a0a0a;
+    background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    color: var(--bg-primary);
     text-decoration: none;
     border: none;
     border-radius: 50px;
     font-weight: 700;
     font-size: 1.1rem;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 24px rgba(57, 255, 20, 0.15);
+    box-shadow: 0 4px 24px var(--shadow-color);
     cursor: pointer;
 }
 
@@ -215,10 +279,10 @@ main {
 
 /* Project cards with advanced effects */
 .project-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-card);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -226,6 +290,14 @@ main {
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation: cardEntry 0.8s ease-out forwards;
     opacity: 0;
+    min-height: 200px;
+}
+
+/* Feature card - larger and more prominent */
+.project-card.feature-card {
+    border: 3px solid var(--accent-primary);
+    box-shadow: 0 8px 32px var(--shadow-color);
+    transform: scale(1.02);
 }
 
 @keyframes cardEntry {
@@ -253,10 +325,14 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, transparent 40%, rgba(57, 255, 20, 0.1) 50%, transparent 60%);
+    background: linear-gradient(135deg, transparent 40%, rgba(var(--accent-primary), 0.1) 50%, transparent 60%);
     transform: translateX(-100%);
     transition: transform 0.6s;
     z-index: 1;
+}
+
+.project-card:hover::before {
+    transform: translateX(100%);
 }
 
 .project-card:hover::before {
