@@ -286,6 +286,34 @@ ReconcilePosition(serverState, clientState);</code>
         </footer>
     </div>
     
+    <script>
+        // Failsafe loader removal - ensures loader is hidden even if main.js fails
+        (function() {
+            function hideLoader() {
+                var loader = document.querySelector('.loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }
+            
+            // Hide loader after DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(hideLoader, 500);
+                });
+            } else {
+                setTimeout(hideLoader, 500);
+            }
+            
+            // Fallback: hide loader after window loads
+            window.addEventListener('load', function() {
+                setTimeout(hideLoader, 1000);
+            });
+            
+            // Emergency fallback: hide loader after 3 seconds regardless
+            setTimeout(hideLoader, 3000);
+        })();
+    </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
