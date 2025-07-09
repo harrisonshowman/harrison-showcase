@@ -167,7 +167,6 @@ header h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
     animation: glow 2s ease-in-out infinite alternate;
     margin-bottom: 0.5rem;
 }
