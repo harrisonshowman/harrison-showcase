@@ -230,9 +230,19 @@ function initFlappyFootballPage() {
 // Initialize page functionality
 function initPage() {
     // Remove loader
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.querySelector('.loader').style.display = 'none';
+    // Remove loader as soon as DOM is ready, as a backup
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            var loader = document.querySelector('.loader');
+            if (loader) loader.style.display = 'none';
+        }, 1000);
+    });
+
+    // Also try on full window load (just in case)
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var loader = document.querySelector('.loader');
+            if (loader) loader.style.display = 'none';
         }, 1000);
     });
 
