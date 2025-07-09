@@ -3,6 +3,43 @@
 
 // Common utility functions
 const HarrisonShowcase = {
+    // Theme management
+    initTheme: function() {
+        // Check for saved theme preference or default to 'dark'
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Update toggle button text
+        this.updateThemeToggleText(savedTheme);
+        
+        // Add event listener for theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', this.toggleTheme.bind(this));
+        }
+    },
+    
+    toggleTheme: function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        this.updateThemeToggleText(newTheme);
+    },
+    
+    updateThemeToggleText: function(theme) {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            if (theme === 'dark') {
+                themeToggle.innerHTML = '<span class="icon">🌙</span> Dark Mode';
+            } else {
+                themeToggle.innerHTML = '<span class="icon">☀️</span> Light Mode';
+            }
+        }
+    },
+
     // Initialize loader removal
     initLoader: function() {
         window.addEventListener('load', () => {
@@ -178,6 +215,7 @@ const HarrisonShowcase = {
 
     // Initialize all common functionality
     initCommon: function() {
+        this.initTheme();
         this.initLoader();
         this.initCursorGlow();
         this.init3DTilt();

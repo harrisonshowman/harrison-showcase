@@ -21,6 +21,9 @@
     
     <link rel="stylesheet" href="/harrison-showcase/css/style.css">
     <link rel="stylesheet" href="/harrison-showcase/css/datastructures.css">
+    
+    <!-- D3.js for interactive visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <!-- Loading screen -->
@@ -35,6 +38,11 @@
     
     <!-- Cursor glow effect -->
     <div class="cursor-glow"></div>
+    
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle">
+        <span class="icon">🌙</span> Dark Mode
+    </button>
     
     <div class="container">
         <header>
@@ -62,7 +70,110 @@
                     </a>
                 </article>
                 
-                <!-- More data structures will be added here -->
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Array</h2>
+                        <p class="structure-desc">
+                            A collection of elements stored in contiguous memory locations with constant-time access.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">Fixed Size</span>
+                            <span class="feature">O(1) Access</span>
+                            <span class="feature">Random Access</span>
+                        </div>
+                        <div class="visualization-container">
+                            <svg id="arrayVis" width="300" height="100"></svg>
+                            <div class="controls">
+                                <button class="action-button" onclick="addArrayElement()">Add Element</button>
+                                <button class="action-button" onclick="removeArrayElement()">Remove Element</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Stack</h2>
+                        <p class="structure-desc">
+                            A Last In, First Out (LIFO) data structure where elements are added and removed from the top.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">LIFO</span>
+                            <span class="feature">O(1) Push/Pop</span>
+                            <span class="feature">Top Access</span>
+                        </div>
+                        <div class="visualization-container">
+                            <svg id="stackVis" width="300" height="200"></svg>
+                            <div class="controls">
+                                <button class="action-button" onclick="pushStack()">Push</button>
+                                <button class="action-button" onclick="popStack()">Pop</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Queue</h2>
+                        <p class="structure-desc">
+                            A First In, First Out (FIFO) data structure where elements are added at the rear and removed from the front.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">FIFO</span>
+                            <span class="feature">O(1) Enqueue/Dequeue</span>
+                            <span class="feature">Front/Rear Access</span>
+                        </div>
+                        <div class="visualization-container">
+                            <svg id="queueVis" width="300" height="100"></svg>
+                            <div class="controls">
+                                <button class="action-button" onclick="enqueue()">Enqueue</button>
+                                <button class="action-button" onclick="dequeue()">Dequeue</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Binary Tree</h2>
+                        <p class="structure-desc">
+                            A hierarchical data structure where each node has at most two children: left and right.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">Hierarchical</span>
+                            <span class="feature">O(log n) Search</span>
+                            <span class="feature">Two Children</span>
+                        </div>
+                        <div class="visualization-container">
+                            <svg id="treeVis" width="300" height="200"></svg>
+                            <div class="controls">
+                                <button class="action-button" onclick="addTreeNode()">Add Node</button>
+                                <button class="action-button" onclick="clearTree()">Clear Tree</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Hash Table</h2>
+                        <p class="structure-desc">
+                            A data structure that uses a hash function to map keys to values for efficient lookup.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">Key-Value</span>
+                            <span class="feature">O(1) Average</span>
+                            <span class="feature">Hash Function</span>
+                        </div>
+                        <div class="visualization-container">
+                            <svg id="hashVis" width="300" height="180"></svg>
+                            <div class="controls">
+                                <button class="action-button" onclick="addHashItem()">Add Item</button>
+                                <button class="action-button" onclick="removeHashItem()">Remove Item</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </section>
         </main>
         
@@ -72,5 +183,351 @@
     </div>
     
     <script src="/harrison-showcase/js/main.js"></script>
+    <script>
+        // D3.js Data Structure Visualizations
+        
+        // Array Visualization
+        let arrayData = [10, 20, 30, 40, 50];
+        
+        function updateArrayVis() {
+            const svg = d3.select('#arrayVis');
+            svg.selectAll('*').remove();
+            
+            const rects = svg.selectAll('rect').data(arrayData);
+            
+            rects.enter()
+                .append('rect')
+                .attr('x', (d, i) => i * 45 + 10)
+                .attr('y', 20)
+                .attr('width', 40)
+                .attr('height', 40)
+                .attr('fill', '#39FF14')
+                .attr('stroke', '#00C8B4')
+                .attr('stroke-width', 2);
+                
+            svg.selectAll('text').data(arrayData)
+                .enter()
+                .append('text')
+                .attr('x', (d, i) => i * 45 + 30)
+                .attr('y', 45)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#0a0a0a')
+                .attr('font-size', '14px')
+                .text(d => d);
+                
+            // Add indices
+            svg.selectAll('.index').data(arrayData)
+                .enter()
+                .append('text')
+                .attr('class', 'index')
+                .attr('x', (d, i) => i * 45 + 30)
+                .attr('y', 80)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#39FF14')
+                .attr('font-size', '12px')
+                .text((d, i) => i);
+        }
+        
+        function addArrayElement() {
+            if (arrayData.length < 6) {
+                arrayData.push(Math.floor(Math.random() * 100));
+                updateArrayVis();
+            }
+        }
+        
+        function removeArrayElement() {
+            if (arrayData.length > 0) {
+                arrayData.pop();
+                updateArrayVis();
+            }
+        }
+        
+        // Stack Visualization
+        let stackData = [10, 20, 30];
+        
+        function updateStackVis() {
+            const svg = d3.select('#stackVis');
+            svg.selectAll('*').remove();
+            
+            const rects = svg.selectAll('rect').data(stackData);
+            
+            rects.enter()
+                .append('rect')
+                .attr('x', 130)
+                .attr('y', (d, i) => 160 - i * 40)
+                .attr('width', 40)
+                .attr('height', 35)
+                .attr('fill', '#39FF14')
+                .attr('stroke', '#00C8B4')
+                .attr('stroke-width', 2);
+                
+            svg.selectAll('text').data(stackData)
+                .enter()
+                .append('text')
+                .attr('x', 150)
+                .attr('y', (d, i) => 180 - i * 40)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#0a0a0a')
+                .attr('font-size', '14px')
+                .text(d => d);
+                
+            // Add "TOP" label
+            if (stackData.length > 0) {
+                svg.append('text')
+                    .attr('x', 180)
+                    .attr('y', 180 - (stackData.length - 1) * 40)
+                    .attr('fill', '#39FF14')
+                    .attr('font-size', '12px')
+                    .text('← TOP');
+            }
+        }
+        
+        function pushStack() {
+            if (stackData.length < 5) {
+                stackData.push(Math.floor(Math.random() * 100));
+                updateStackVis();
+            }
+        }
+        
+        function popStack() {
+            if (stackData.length > 0) {
+                stackData.pop();
+                updateStackVis();
+            }
+        }
+        
+        // Queue Visualization
+        let queueData = [10, 20, 30];
+        
+        function updateQueueVis() {
+            const svg = d3.select('#queueVis');
+            svg.selectAll('*').remove();
+            
+            const rects = svg.selectAll('rect').data(queueData);
+            
+            rects.enter()
+                .append('rect')
+                .attr('x', (d, i) => i * 45 + 10)
+                .attr('y', 30)
+                .attr('width', 40)
+                .attr('height', 40)
+                .attr('fill', '#39FF14')
+                .attr('stroke', '#00C8B4')
+                .attr('stroke-width', 2);
+                
+            svg.selectAll('text').data(queueData)
+                .enter()
+                .append('text')
+                .attr('x', (d, i) => i * 45 + 30)
+                .attr('y', 55)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#0a0a0a')
+                .attr('font-size', '14px')
+                .text(d => d);
+                
+            // Add FRONT and REAR labels
+            if (queueData.length > 0) {
+                svg.append('text')
+                    .attr('x', 30)
+                    .attr('y', 20)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', '#39FF14')
+                    .attr('font-size', '12px')
+                    .text('FRONT');
+                    
+                svg.append('text')
+                    .attr('x', (queueData.length - 1) * 45 + 30)
+                    .attr('y', 90)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', '#39FF14')
+                    .attr('font-size', '12px')
+                    .text('REAR');
+            }
+        }
+        
+        function enqueue() {
+            if (queueData.length < 6) {
+                queueData.push(Math.floor(Math.random() * 100));
+                updateQueueVis();
+            }
+        }
+        
+        function dequeue() {
+            if (queueData.length > 0) {
+                queueData.shift();
+                updateQueueVis();
+            }
+        }
+        
+        // Binary Tree Visualization
+        let treeData = { value: 50, left: { value: 30 }, right: { value: 70 } };
+        
+        function updateTreeVis() {
+            const svg = d3.select('#treeVis');
+            svg.selectAll('*').remove();
+            
+            // Simple tree drawing
+            if (treeData) {
+                // Root
+                svg.append('circle')
+                    .attr('cx', 150)
+                    .attr('cy', 40)
+                    .attr('r', 20)
+                    .attr('fill', '#39FF14')
+                    .attr('stroke', '#00C8B4')
+                    .attr('stroke-width', 2);
+                    
+                svg.append('text')
+                    .attr('x', 150)
+                    .attr('y', 45)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', '#0a0a0a')
+                    .attr('font-size', '12px')
+                    .text(treeData.value);
+                
+                // Left child
+                if (treeData.left) {
+                    svg.append('line')
+                        .attr('x1', 135)
+                        .attr('y1', 55)
+                        .attr('x2', 100)
+                        .attr('y2', 85)
+                        .attr('stroke', '#00C8B4')
+                        .attr('stroke-width', 2);
+                        
+                    svg.append('circle')
+                        .attr('cx', 100)
+                        .attr('cy', 100)
+                        .attr('r', 15)
+                        .attr('fill', '#39FF14')
+                        .attr('stroke', '#00C8B4')
+                        .attr('stroke-width', 2);
+                        
+                    svg.append('text')
+                        .attr('x', 100)
+                        .attr('y', 105)
+                        .attr('text-anchor', 'middle')
+                        .attr('fill', '#0a0a0a')
+                        .attr('font-size', '10px')
+                        .text(treeData.left.value);
+                }
+                
+                // Right child
+                if (treeData.right) {
+                    svg.append('line')
+                        .attr('x1', 165)
+                        .attr('y1', 55)
+                        .attr('x2', 200)
+                        .attr('y2', 85)
+                        .attr('stroke', '#00C8B4')
+                        .attr('stroke-width', 2);
+                        
+                    svg.append('circle')
+                        .attr('cx', 200)
+                        .attr('cy', 100)
+                        .attr('r', 15)
+                        .attr('fill', '#39FF14')
+                        .attr('stroke', '#00C8B4')
+                        .attr('stroke-width', 2);
+                        
+                    svg.append('text')
+                        .attr('x', 200)
+                        .attr('y', 105)
+                        .attr('text-anchor', 'middle')
+                        .attr('fill', '#0a0a0a')
+                        .attr('font-size', '10px')
+                        .text(treeData.right.value);
+                }
+            }
+        }
+        
+        function addTreeNode() {
+            const value = Math.floor(Math.random() * 100);
+            if (!treeData.left) {
+                treeData.left = { value: value };
+            } else if (!treeData.right) {
+                treeData.right = { value: value };
+            } else if (!treeData.left.left) {
+                treeData.left.left = { value: value };
+            } else if (!treeData.left.right) {
+                treeData.left.right = { value: value };
+            }
+            updateTreeVis();
+        }
+        
+        function clearTree() {
+            treeData = { value: 50 };
+            updateTreeVis();
+        }
+        
+        // Hash Table Visualization
+        let hashData = [null, 'key1:val1', null, 'key2:val2', null];
+        
+        function updateHashVis() {
+            const svg = d3.select('#hashVis');
+            svg.selectAll('*').remove();
+            
+            hashData.forEach((item, i) => {
+                const y = i * 30 + 20;
+                
+                // Hash bucket
+                svg.append('rect')
+                    .attr('x', 10)
+                    .attr('y', y)
+                    .attr('width', 200)
+                    .attr('height', 25)
+                    .attr('fill', item ? '#39FF14' : 'none')
+                    .attr('stroke', '#00C8B4')
+                    .attr('stroke-width', 2);
+                    
+                // Index
+                svg.append('text')
+                    .attr('x', 5)
+                    .attr('y', y + 17)
+                    .attr('fill', '#39FF14')
+                    .attr('font-size', '12px')
+                    .text(i);
+                    
+                // Value
+                if (item) {
+                    svg.append('text')
+                        .attr('x', 15)
+                        .attr('y', y + 17)
+                        .attr('fill', '#0a0a0a')
+                        .attr('font-size', '12px')
+                        .text(item);
+                }
+            });
+        }
+        
+        function addHashItem() {
+            const emptyIndex = hashData.findIndex(item => item === null);
+            if (emptyIndex !== -1) {
+                const key = `key${emptyIndex}`;
+                const value = `val${Math.floor(Math.random() * 100)}`;
+                hashData[emptyIndex] = `${key}:${value}`;
+                updateHashVis();
+            }
+        }
+        
+        function removeHashItem() {
+            for (let i = hashData.length - 1; i >= 0; i--) {
+                if (hashData[i] !== null) {
+                    hashData[i] = null;
+                    updateHashVis();
+                    break;
+                }
+            }
+        }
+        
+        // Initialize all visualizations
+        document.addEventListener('DOMContentLoaded', function() {
+            updateArrayVis();
+            updateStackVis();
+            updateQueueVis();
+            updateTreeVis();
+            updateHashVis();
+        });
+    </script>
 </body>
 </html>

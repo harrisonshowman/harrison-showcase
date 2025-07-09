@@ -19,106 +19,117 @@
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="site.webmanifest" />
     
-    <style>
-        body { margin: 0; background: #0a0a0a; }
-        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; z-index: 9999; display: flex; align-items: center; justify-content: center; }
-        .loader-inner { width: 60px; height: 60px; border: 3px solid rgba(57, 255, 20, 0.3); border-top-color: #39FF14; border-radius: 50%; animation: spin 1s linear infinite; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-    </style>
-    
     <link rel="stylesheet" href="/harrison-showcase/css/style.css">
     <link rel="stylesheet" href="/harrison-showcase/css/projects.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Projects</h1>
-      <p>Grouped by what I love building most.</p>
-    </header>
-    <!-- Project List Nav -->
-    <nav class="project-quick-nav" style="margin-bottom:2rem;">
-      <strong>Quick List:</strong>
-      <a href="#mobile-apps">Mobile Apps</a> |
-      <a href="#games-animation">Game Development/Animation</a>
-      <span style="margin-left:2em;">
-        <!-- Per-project quick links -->
-        <a href="#wineabout">WineAbout</a>
-        <a href="#picturelocation">PictureLocation</a>
-        <a href="#flappyfootball">Flappy Football</a>
-        <a href="#unity">Unity Games</a>
-        <a href="#3danimation">3D Animation</a>
-      </span>
-    </nav>
-
-    <main>
-      <!-- MOBILE APPS -->
-      <section id="mobile-apps">
-        <h2>Mobile Apps</h2>
-        <div class="projects">
-          <article class="project-card" id="wineabout">
-            <a class="project-link" href="wineabout.html">
-              <h3 class="project-title">WineAbout App</h3>
-              <p class="project-desc">A social wine journal app for discovering, reviewing, and sharing wines with friends.</p>
-              <div class="project-tags">
-                <span class="tag">React Native</span>
-                <span class="tag">Firebase</span>
-              </div>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle">
+        <span class="icon">🌙</span> Dark Mode
+    </button>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Projects">Projects</h1>
+            <p class="tagline">Explore my portfolio of creative projects</p>
+        </header>
+        
+        <main>
+            <a href="/harrison-showcase/html/index.html" class="button-accent margin-bottom-3">
+                <span>← Back to Home</span>
             </a>
-          </article>
-          <article class="project-card" id="picturelocation">
-            <a class="project-link" href="picturelocationapp.html">
-              <h3 class="project-title">PictureLocation App</h3>
-              <p class="project-desc">A mobile app that tags and organizes your photos by location using GPS metadata.</p>
-              <div class="project-tags">
-                <span class="tag">Swift</span>
-                <span class="tag">iOS</span>
-              </div>
-            </a>
-          </article>
-          <article class="project-card" id="flappyfootball">
-            <a class="project-link" href="flappyfootball.html">
-              <h3 class="project-title">Flappy Football</h3>
-              <p class="project-desc">A fun, fast-paced mobile game inspired by Flappy Bird, with a football twist.</p>
-              <div class="project-tags">
-                <span class="tag">Flutter</span>
-                <span class="tag">Dart</span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <!-- GAME DEV / ANIMATION -->
-      <section id="games-animation" style="margin-top:3rem;">
-        <h2>Game Development & Animation</h2>
-        <div class="projects">
-          <article class="project-card" id="unity">
-            <a class="project-link" href="gamedevelopmentinunity.html">
-              <h3 class="project-title">Game Development (Unity)</h3>
-              <p class="project-desc">Interactive games using Unity and C#, focused on gameplay mechanics and performance.</p>
-              <div class="project-tags">
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-              </div>
-            </a>
-          </article>
-          <article class="project-card" id="3danimation">
-            <a class="project-link" href="3dcharacteranimation.html">
-              <h3 class="project-title">3D Character Animation</h3>
-              <p class="project-desc">Lifelike 3D character animations for games and AR/VR experiences using Blender & Unity.</p>
-              <div class="project-tags">
-                <span class="tag">Blender</span>
-                <span class="tag">Unity</span>
-                <span class="tag">3D</span>
-              </div>
-            </a>
-          </article>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2025 Harrison Showman.</p>
-    </footer>
-  </div>
+            
+            <section class="projects">
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="projects/wineabout.html">
+                        <h2 class="project-title">WineAbout App</h2>
+                        <p class="project-desc">
+                            A social wine journal app for discovering, reviewing, and sharing wines with friends.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="projects/picturelocationapp.html">
+                        <h2 class="project-title">PictureLocation App</h2>
+                        <p class="project-desc">
+                            A mobile app that tags and organizes your photos by location using GPS metadata.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Swift</span>
+                            <span class="tag">iOS</span>
+                            <span class="tag">GPS</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="projects/flappyfootball.html">
+                        <h2 class="project-title">Flappy Football</h2>
+                        <p class="project-desc">
+                            A fun, fast-paced mobile game inspired by Flappy Bird, with a football twist.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">Game</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="projects/gamedevelopmentinunity.html">
+                        <h2 class="project-title">Game Development (Unity)</h2>
+                        <p class="project-desc">
+                            Interactive games using Unity and C#, focused on gameplay mechanics and performance.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Game Development</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="projects/3dcharacteranimation.html">
+                        <h2 class="project-title">3D Character Animation</h2>
+                        <p class="project-desc">
+                            Lifelike 3D character animations for games and AR/VR experiences using Blender & Unity.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">3D Animation</span>
+                        </div>
+                    </a>
+                </article>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
