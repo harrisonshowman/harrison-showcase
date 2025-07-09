@@ -131,5 +131,15 @@
     </div>
 
     <script src="../js/main.js"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var loader = document.querySelector('.loader');
+        if (loader && loader.style.display !== 'none') {
+          loader.style.display = 'none';
+        }
+      }, 3000); // fallback after 3 seconds
+    });
+    </script>
 </body>
 </html>
