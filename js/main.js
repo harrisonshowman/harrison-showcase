@@ -189,6 +189,22 @@ const HarrisonShowcase = {
     // Initialize page-specific functionality
     initPageSpecific: function() {
         const path = window.location.pathname;
+
+        // Remove loader as soon as DOM is ready, as a backup
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var loader = document.querySelector('.loader');
+                if (loader) loader.style.display = 'none';
+            }, 1000);
+        });
+
+        // Also try on full window load (just in case)
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loader = document.querySelector('.loader');
+                if (loader) loader.style.display = 'none';
+            }, 1000);
+        });
         
         if (path.includes('profile.html')) {
             this.initProfileAnimations();
