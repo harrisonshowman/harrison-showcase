@@ -347,16 +347,16 @@ main {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #39FF14, #00C8B4, #FF006E, #39FF14);
+    background: var(--accent-primary);
     border-radius: 20px;
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s;
-    filter: blur(5px);
+    filter: blur(8px);
 }
 
 .project-card:hover::after {
-    opacity: 0.7;
+    opacity: 0.3;
 }
 
 .project-card:hover {
@@ -1209,16 +1209,16 @@ body {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #39FF14, #00C8B4, #FF006E, #39FF14);
+    background: var(--accent-primary);
     border-radius: 20px;
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s;
-    filter: blur(5px);
+    filter: blur(8px);
 }
 
 .project-card:hover::after {
-    opacity: 0.7;
+    opacity: 0.3;
 }
 
 .project-card:hover {
