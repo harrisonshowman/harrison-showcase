@@ -4,12 +4,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Game Development - Harrison Showman</title>
-    
     <!-- Modern font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
@@ -17,279 +15,89 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="../../site.webmanifest" />
-    
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/projects.css">
+    <style>
+        .project-summary {
+            max-width: 700px;
+            margin: 2rem auto 2rem auto;
+            text-align: center;
+            color: #cfcfe2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .video-demo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .video-demo video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .pdf-viewer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .pdf-viewer iframe {
+            width: 100%;
+            max-width: 700px;
+            height: 900px;
+            border: none;
+            border-radius: 12px;
+            background: #222;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 800px) {
+            .pdf-viewer iframe {
+                max-width: 100vw;
+                height: 70vw;
+                min-height: 400px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loading screen -->
     <div class="loader">
         <div class="loader-inner"></div>
     </div>
-    
     <!-- Animated background elements -->
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
-    
     <!-- Cursor glow effect -->
     <div class="cursor-glow"></div>
-    
     <div class="container">
         <header>
             <h1 class="glitch" data-text="Game Development">Game Development</h1>
-            <p>Building immersive worlds with Unity and C#</p>
         </header>
-        
         <main>
-        <!-- Use this for your back/home button -->
             <a href="../../html/projects.html" class="button-accent margin-bottom-3">
                 <span>← Back to Projects</span>
             </a>
-            <section class="project-showcase">
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h2 class="project-title-large">Creating Interactive Experiences That Captivate Players</h2>
-                            <p class="project-subtitle">
-                                From indie puzzlers to action-packed adventures, I specialize in developing engaging games 
-                                with Unity and C#. My focus is on crafting polished gameplay mechanics, intuitive UI, and 
-                                optimized performance across all platforms.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Unity 2022 LTS</span>
-                                <span class="tech-badge">C#</span>
-                                <span class="tech-badge">Shader Graph</span>
-                                <span class="tech-badge">DOTS</span>
-                                <span class="tech-badge">XR Toolkit</span>
-                            </div>
-                        </div>
-                        <div class="hero-image">
-                            <div class="video-showcase">
-                                <video controls poster="../../other assets/Forest Challenge Cover.png" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-                                    <source src="../../videos/Forest Challenge Demonstration.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <div class="video-overlay">
-                                    <div class="play-button">▶</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features-section">
-                    <h3 class="section-title">Development Expertise</h3>
-                    <div class="features-grid">
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🎮</div>
-                            <h4>Gameplay Programming</h4>
-                            <p>Smooth character controllers, physics-based interactions, and responsive combat systems.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🧩</div>
-                            <h4>Systems Design</h4>
-                            <p>Modular architecture with inventory systems, skill trees, and progression mechanics.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🎨</div>
-                            <h4>Visual Effects</h4>
-                            <p>Custom shaders, particle systems, and post-processing for stunning visual experiences.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">📱</div>
-                            <h4>Cross-Platform</h4>
-                            <p>Optimized builds for PC, mobile, console, and VR/AR platforms.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="games-showcase">
-                    <h3 class="section-title">Featured Games</h3>
-                    <div class="games-grid">
-                        <div class="game-card">
-                            <div class="game-image">
-                                <img src="images/game-cosmic-quest.png" alt="Cosmic Quest" />
-                                <div class="game-badges">
-                                    <span class="platform-badge">PC</span>
-                                    <span class="platform-badge">Mobile</span>
-                                </div>
-                            </div>
-                            <div class="game-info">
-                                <h4>Cosmic Quest</h4>
-                                <p>A space exploration RPG with procedural planets and dynamic storytelling.</p>
-                                <div class="game-stats">
-                                    <span>⭐ 4.8/5</span>
-                                    <span>📥 50K+ Downloads</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <div class="game-image">
-                                <img src="images/game-puzzle-dimensions.png" alt="Puzzle Dimensions" />
-                                <div class="game-badges">
-                                    <span class="platform-badge">Mobile</span>
-                                    <span class="platform-badge">WebGL</span>
-                                </div>
-                            </div>
-                            <div class="game-info">
-                                <h4>Puzzle Dimensions</h4>
-                                <p>Mind-bending 3D puzzles with perspective-shifting mechanics.</p>
-                                <div class="game-stats">
-                                    <span>🏆 Best Puzzle 2024</span>
-                                    <span>👥 100K+ Players</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <div class="game-image">
-                                <img src="images/game-neon-runners.png" alt="Neon Runners" />
-                                <div class="game-badges">
-                                    <span class="platform-badge">PC</span>
-                                    <span class="platform-badge">Console</span>
-                                </div>
-                            </div>
-                            <div class="game-info">
-                                <h4>Neon Runners</h4>
-                                <p>Fast-paced cyberpunk racing with procedural track generation.</p>
-                                <div class="game-stats">
-                                    <span>💯 Metacritic 85</span>
-                                    <span>🎮 Steam Featured</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="technical-showcase">
-                    <h3 class="section-title">Technical Innovations</h3>
-                    <div class="tech-innovations">
-                        <div class="innovation-card">
-                            <div class="innovation-header">
-                                <span class="innovation-icon">🚀</span>
-                                <h4>Performance Optimization</h4>
-                            </div>
-                            <p>Implemented custom LOD systems and object pooling to maintain 60+ FPS on all target devices.</p>
-                            <div class="code-preview">
-                                <code>// Dynamic LOD switching based on performance metrics
-UpdateLOD(distance, frameTime);</code>
-                            </div>
-                        </div>
-                        <div class="innovation-card">
-                            <div class="innovation-header">
-                                <span class="innovation-icon">🤖</span>
-                                <h4>Advanced AI Systems</h4>
-                            </div>
-                            <p>Behavior trees and state machines for complex enemy AI with dynamic difficulty adjustment.</p>
-                            <div class="code-preview">
-                                <code>// AI decision making with utility theory
-float utility = CalculateActionUtility(context);</code>
-                            </div>
-                        </div>
-                        <div class="innovation-card">
-                            <div class="innovation-header">
-                                <span class="innovation-icon">🌐</span>
-                                <h4>Multiplayer Architecture</h4>
-                            </div>
-                            <p>Netcode implementation with client-side prediction and lag compensation for smooth online play.</p>
-                            <div class="code-preview">
-                                <code>// Client prediction with server reconciliation
-ReconcilePosition(serverState, clientState);</code>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="development-process">
-                    <h3 class="section-title">Development Pipeline</h3>
-                    <div class="process-timeline">
-                        <div class="process-item">
-                            <div class="process-number">01</div>
-                            <div class="process-content">
-                                <h4>Prototyping</h4>
-                                <p>Rapid iteration on core mechanics using Unity's ProBuilder and visual scripting.</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">02</div>
-                            <div class="process-content">
-                                <h4>Production</h4>
-                                <p>Agile development with continuous integration and automated testing pipelines.</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">03</div>
-                            <div class="process-content">
-                                <h4>Polish</h4>
-                                <p>Performance profiling, bug fixing, and adding those crucial game feel touches.</p>
-                            </div>
-                        </div>
-                        <div class="process-item">
-                            <div class="process-number">04</div>
-                            <div class="process-content">
-                                <h4>Launch</h4>
-                                <p>Multi-platform deployment with analytics integration and live-ops support.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-showcase">
-                    <h3 class="section-title">Unity Skillset</h3>
-                    <div class="skills-matrix">
-                        <div class="skill-item">
-                            <div class="skill-name">C# Programming</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress width-95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Unity Engine</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress width-90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Shader Programming</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress width-75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">Multiplayer/Networking</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress width-80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">VR/AR Development</div>
-                            <div class="skill-bar">
-                                <div class="skill-progress width-70"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cta-section">
-                    <h3>Let's Build Something Amazing</h3>
-                    <p class="cta-subtitle">Check out the source code or play the demos</p>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/harrisonshowman/unity-projects" target="_blank" class="button-accent">
-                            <span>View Source Code</span>
-                        </a>
-                        <a href="https://harrisonshowman.itch.io" target="_blank" class="button-secondary">
-                            <span>Play Demos</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <div class="project-summary">
+                This Unity project demonstrates my skills in C# and game development. 
+                It features a playable demo built in Unity, showcasing core gameplay mechanics, UI, and polish. 
+                The project was created as a hands-on learning experience and includes a full game design document below.
+            </div>
+            <div class="video-demo">
+                <video id="demo-video" controls poster="../../other assets/Forest Challenge Cover.png" style="cursor:pointer;">
+                    <source src="../../videos/Forest Challenge Demonstration.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="pdf-viewer">
+                <iframe src="../../pdfs/gamedesign.pdf"></iframe>
+            </div>
         </main>
-        
         <footer>
             <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
         </footer>
     </div>
-    
     <script>
         // Failsafe loader removal - ensures loader is hidden even if main.js fails
         (function() {
@@ -299,7 +107,6 @@ ReconcilePosition(serverState, clientState);</code>
                     loader.style.display = 'none';
                 }
             }
-            
             // Hide loader after DOM is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
@@ -308,16 +115,108 @@ ReconcilePosition(serverState, clientState);</code>
             } else {
                 setTimeout(hideLoader, 500);
             }
-            
             // Fallback: hide loader after window loads
             window.addEventListener('load', function() {
                 setTimeout(hideLoader, 1000);
             });
-            
             // Emergency fallback: hide loader after 3 seconds regardless
             setTimeout(hideLoader, 3000);
         })();
+        // Video modal popup
+        (function() {
+            var video = document.getElementById('demo-video');
+            var modal, modalContent, closeBtn, modalVideo;
+
+            function createModal() {
+            modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = 0;
+            modal.style.left = 0;
+            modal.style.width = '100vw';
+            modal.style.height = '100vh';
+            modal.style.background = 'rgba(0,0,0,0.85)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = 9999;
+
+            modalContent = document.createElement('div');
+            modalContent.style.position = 'relative';
+            modalContent.style.maxWidth = '90vw';
+            modalContent.style.maxHeight = '90vh';
+            modalContent.style.boxShadow = '0 8px 32px rgba(0,0,0,0.5)';
+            modalContent.style.borderRadius = '12px';
+            modalContent.style.overflow = 'hidden';
+            modal.appendChild(modalContent);
+
+            closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '&times;';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '10px';
+            closeBtn.style.right = '18px';
+            closeBtn.style.fontSize = '2rem';
+            closeBtn.style.background = 'rgba(0,0,0,0.4)';
+            closeBtn.style.color = '#fff';
+            closeBtn.style.border = 'none';
+            closeBtn.style.cursor = 'pointer';
+            closeBtn.style.zIndex = 2;
+            closeBtn.style.borderRadius = '50%';
+            closeBtn.style.width = '40px';
+            closeBtn.style.height = '40px';
+            closeBtn.style.display = 'flex';
+            closeBtn.style.alignItems = 'center';
+            closeBtn.style.justifyContent = 'center';
+            closeBtn.setAttribute('aria-label', 'Close video');
+            modalContent.appendChild(closeBtn);
+
+            modalVideo = document.createElement('video');
+            modalVideo.controls = true;
+            modalVideo.autoplay = true;
+            modalVideo.style.width = '80vw';
+            modalVideo.style.maxWidth = '900px';
+            modalVideo.style.maxHeight = '80vh';
+            modalVideo.style.background = '#111';
+            modalVideo.style.display = 'block';
+            modalVideo.poster = video.poster;
+            var source = document.createElement('source');
+            source.src = video.querySelector('source').src;
+            source.type = 'video/mp4';
+            modalVideo.appendChild(source);
+            modalContent.appendChild(modalVideo);
+
+            document.body.appendChild(modal);
+
+            // Close events
+            closeBtn.onclick = closeModal;
+            modal.onclick = function(e) {
+                if (e.target === modal) closeModal();
+            };
+            document.addEventListener('keydown', escListener);
+            }
+
+            function closeModal() {
+            if (modal) {
+                modalVideo.pause();
+                modal.remove();
+                modal = null;
+                document.removeEventListener('keydown', escListener);
+            }
+            }
+
+            function escListener(e) {
+            if (e.key === 'Escape') closeModal();
+            }
+
+            video.addEventListener('click', function(e) {
+            // Only open modal if not clicking controls
+            if (e.target === video) {
+                createModal();
+            }
+            });
+        })();
+        // Video modal popup (optional, copy from flappyfootball if you want popup)
     </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
+                                    
