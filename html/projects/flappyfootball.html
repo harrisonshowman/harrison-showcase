@@ -4,12 +4,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Flappy Football - Harrison Showman</title>
-    
     <!-- Modern font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
@@ -17,239 +15,70 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="../../site.webmanifest" />
-
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/projects.css">
+    <style>
+        .project-summary {
+            max-width: 700px;
+            margin: 2rem auto 2rem auto;
+            text-align: center;
+            color: #cfcfe2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .video-demo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .video-demo video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 <body>
     <!-- Loading screen -->
     <div class="loader">
         <div class="loader-inner"></div>
     </div>
-    
     <!-- Animated background elements -->
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
-    
     <!-- Cursor glow effect -->
     <div class="cursor-glow"></div>
-    
     <div class="container">
         <header>
             <h1 class="glitch" data-text="Flappy Football">Flappy Football</h1>
-            <p>The addictive arcade game with a sporty twist</p>
         </header>
-        
         <main>
-            <!-- Use this for your back/home button -->
             <a href="../../html/projects.html" class="button-accent margin-bottom-3">
                 <span>← Back to Projects</span>
             </a>
-            
-            <section class="project-showcase">
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h2 class="project-title-large">Score Big in This High-Flying Football Adventure</h2>
-                            <p class="project-subtitle">
-                                Flappy Football takes the beloved mechanics of the classic flapper genre and adds a sports twist. 
-                                Guide your football through challenging obstacles, collect power-ups, and compete for the highest 
-                                score in this addictive mobile game built with Flutter.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Flutter</span>
-                                <span class="tech-badge">Dart</span>
-                                <span class="tech-badge">Flame Engine</span>
-                                <span class="tech-badge">Firebase</span>
-                            </div>
-                            <div class="video-showcase">
-                                <video controls poster="../../other assets/Flappy Football Cover.png" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-                                    <source src="../../videos/Flappy Football Demo.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <div class="video-overlay">
-                                    <div class="play-button">▶</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features-section">
-                    <h3 class="section-title">Game Features</h3>
-                    <div class="features-grid">
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">⚽</div>
-                            <h4>Simple Controls</h4>
-                            <p>One-tap gameplay that's easy to learn but challenging to master.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🏆</div>
-                            <h4>Global Leaderboards</h4>
-                            <p>Compete with players worldwide and climb the rankings.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">💎</div>
-                            <h4>Power-Ups</h4>
-                            <p>Collect special items for temporary boosts and score multipliers.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🎨</div>
-                            <h4>Customization</h4>
-                            <p>Unlock different football skins and stadium themes as you progress.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gameplay-showcase">
-                    <h3 class="section-title">Gameplay Showcase</h3>
-                    <div class="gameplay-grid">
-                        <div class="gameplay-item">
-                            <img src="images/flappyfootball2.png" alt="Main Menu" />
-                            <h4>Vibrant Main Menu</h4>
-                            <p>Eye-catching design with smooth animations</p>
-                        </div>
-                        <div class="gameplay-item">
-                            <img src="images/flappyfootball-gameplay.png" alt="Gameplay" />
-                            <h4>Addictive Gameplay</h4>
-                            <p>Navigate through stadium-themed obstacles</p>
-                        </div>
-                        <div class="gameplay-item">
-                            <img src="images/flappyfootball-powerup.png" alt="Power-ups" />
-                            <h4>Exciting Power-Ups</h4>
-                            <p>Boost your way to higher scores</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stats-section">
-                    <h3 class="section-title">Game Statistics</h3>
-                    <div class="stats-container">
-                        <div class="stat-box">
-                            <div class="stat-icon">📱</div>
-                            <div class="stat-value" data-count="250000">0</div>
-                            <div class="stat-label">Downloads</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-icon">⭐</div>
-                            <div class="stat-value">4.7</div>
-                            <div class="stat-label">Average Rating</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-icon">🌍</div>
-                            <div class="stat-value" data-count="45">0</div>
-                            <div class="stat-label">Countries</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-icon">🏅</div>
-                            <div class="stat-value" data-count="10000000">0</div>
-                            <div class="stat-label">Games Played</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="development-story">
-                    <h3 class="section-title">Development Journey</h3>
-                    <div class="story-content">
-                        <div class="story-section">
-                            <div class="story-icon">💡</div>
-                            <div class="story-text">
-                                <h4>The Idea</h4>
-                                <p>Started as a weekend project to learn Flutter, combining my love for football with the addictive mechanics of flappy-style games. The goal was to create something simple yet engaging that could showcase Flutter's capabilities.</p>
-                            </div>
-                        </div>
-                        <div class="story-section">
-                            <div class="story-icon">🛠️</div>
-                            <div class="story-text">
-                                <h4>Technical Challenges</h4>
-                                <p>Implementing smooth physics, optimizing for different screen sizes, and creating a responsive control system that feels natural on both iOS and Android devices. The Flame game engine proved perfect for handling sprites and collisions.</p>
-                            </div>
-                        </div>
-                        <div class="story-section">
-                            <div class="story-icon">🚀</div>
-                            <div class="story-text">
-                                <h4>Launch & Growth</h4>
-                                <p>What started as a learning project became a hit in the app stores. Regular updates with new features, seasonal themes, and community feedback integration helped grow the player base organically.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="technical-details">
-                    <h3 class="section-title">Technical Implementation</h3>
-                    <div class="tech-cards-grid">
-                        <div class="tech-detail-card">
-                            <h4>Flutter Architecture</h4>
-                            <p>Built with clean architecture principles, separating game logic, UI, and data layers for maintainability.</p>
-                            <div class="tech-tags">
-                                <span>BLoC Pattern</span>
-                                <span>Provider</span>
-                                <span>Clean Code</span>
-                            </div>
-                        </div>
-                        <div class="tech-detail-card">
-                            <h4>Game Engine</h4>
-                            <p>Leveraged Flame engine for smooth 60 FPS gameplay with optimized sprite rendering and collision detection.</p>
-                            <div class="tech-tags">
-                                <span>Flame</span>
-                                <span>Box2D</span>
-                                <span>Particle Effects</span>
-                            </div>
-                        </div>
-                        <div class="tech-detail-card">
-                            <h4>Backend Services</h4>
-                            <p>Firebase integration for leaderboards, analytics, and crash reporting to continuously improve the game.</p>
-                            <div class="tech-tags">
-                                <span>Firestore</span>
-                                <span>Analytics</span>
-                                <span>Cloud Functions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reviews-section">
-                    <h3 class="section-title">Player Reviews</h3>
-                    <div class="reviews-carousel">
-                        <div class="review-card">
-                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                            <p>"Best football game on mobile! Simple but so addictive. Can't stop trying to beat my high score!"</p>
-                            <div class="review-author">- Alex M.</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                            <p>"Love the smooth gameplay and the football theme. Power-ups make it really exciting!"</p>
-                            <div class="review-author">- Sarah K.</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                            <p>"My kids and I compete for the highest score every day. Great family fun!"</p>
-                            <div class="review-author">- Mike T.</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cta-section">
-                    <h3>Ready to Play?</h3>
-                    <p class="cta-subtitle">Download now or check out the source code</p>
-                    <div class="cta-buttons">
-                        <a href="https://apps.apple.com/flappyfootball" target="_blank" class="button-accent">
-                            <span>Download Game</span>
-                        </a>
-                        <a href="https://github.com/harrisonshowman/flappy-football" target="_blank" class="button-secondary">
-                            <span>View Source</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <div class="project-summary">
+                Flappy Football is a simple Swift/iOS project inspired by the classic "flappy" genre. 
+                It was created as a learning exercise to get comfortable with Swift and SpriteKit. 
+                Guide the football through obstacles and try to beat your high score!
+            </div>
+            <div class="video-demo">
+                <video id="demo-video" controls poster="../../other assets/Flappy Football Cover.png" style="cursor:pointer;">
+                    <source src="../../videos/Flappy Football Demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </main>
-        
         <footer>
             <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
         </footer>
     </div>
-    
+    <!-- Modal for enlarged video -->
+    <div id="video-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,30,0.92);align-items:center;justify-content:center;">
+        <span id="video-modal-close" style="position:absolute;top:2rem;right:2rem;font-size:2.5rem;color:#fff;cursor:pointer;z-index:10001;">&times;</span>
+        <div id="video-modal-content" style="max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center;"></div>
+    </div>
     <script>
         // Failsafe loader removal - ensures loader is hidden even if main.js fails
         (function() {
@@ -259,7 +88,7 @@
                     loader.style.display = 'none';
                 }
             }
-            
+
             // Hide loader after DOM is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
@@ -268,16 +97,70 @@
             } else {
                 setTimeout(hideLoader, 500);
             }
-            
+
             // Fallback: hide loader after window loads
             window.addEventListener('load', function() {
                 setTimeout(hideLoader, 1000);
             });
-            
+
             // Emergency fallback: hide loader after 3 seconds regardless
             setTimeout(hideLoader, 3000);
         })();
+
+        // Video modal popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('demo-video');
+            const modal = document.getElementById('video-modal');
+            const modalContent = document.getElementById('video-modal-content');
+            const closeBtn = document.getElementById('video-modal-close');
+            let modalVideo = null;
+
+            video.addEventListener('click', function(e) {
+                // Pause the inline video if playing
+                video.pause();
+                // Create a new video element for the modal
+                modalContent.innerHTML = '';
+                modalVideo = document.createElement('video');
+                modalVideo.src = video.querySelector('source').src;
+                modalVideo.poster = video.poster;
+                modalVideo.controls = true;
+                modalVideo.autoplay = true;
+                modalVideo.style.maxWidth = '90vw';
+                modalVideo.style.maxHeight = '90vh';
+                modalContent.appendChild(modalVideo);
+                modal.style.display = 'flex';
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                if (modalVideo) {
+                    modalVideo.pause();
+                }
+                modalContent.innerHTML = '';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    if (modalVideo) {
+                        modalVideo.pause();
+                    }
+                    modalContent.innerHTML = '';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    if (modalVideo) {
+                        modalVideo.pause();
+                    }
+                    modalContent.innerHTML = '';
+                }
+            });
+        });
     </script>
     <script src="../js/main.js"></script>
 </body>
 </html>
+
