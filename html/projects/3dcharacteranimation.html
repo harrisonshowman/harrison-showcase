@@ -35,10 +35,33 @@
             transition: transform 0.15s, box-shadow 0.15s;
             text-align: center;
         }
-        
-        .assignment-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+
+        /* Larger card for assignments with two media items */
+        .assignment-card-large {
+            grid-column: span 2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .assignment-card-large .assignment-media-group {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .assignment-card-large .assignment-media {
+            width: 100%;
+            max-width: 350px;
+        }
+        @media (max-width: 900px) {
+            .assignment-card-large .assignment-media-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .assignment-card-large .assignment-media {
+                max-width: 100%;
+            }
         }
         
         .assignment-title {
@@ -146,25 +169,29 @@
                     </div>
                     
                     <!-- Assignment 7 -->
-                    <div class="assignment-card">
+                    <div class="assignment-card assignment-card-large">
                         <div class="assignment-title">Assignment 7: Walk Cycle</div>
-                        <a href="../../other assets/Assignment 7 Part 1.png" class="media-link" data-type="img">
-                            <img src="../../other assets/Assignment 7 Part 1.png" alt="Walk Cycle" class="assignment-media">
-                        </a>
-                        <a href="../../videos/Assignment 7 Part 2.mp4.mp4" class="media-link" data-type="video">
-                            <video src="../../videos/Assignment 7 Part 2.mp4.mp4" alt="Walk Cycle" class="assignment-media" controls muted preload="metadata"></video>
-                        </a>
+                        <div class="assignment-media-group">
+                            <a href="../../other assets/Assignment 7 Part 1.png" class="media-link" data-type="img">
+                                <img src="../../other assets/Assignment 7 Part 1.png" alt="Walk Cycle" class="assignment-media">
+                            </a>
+                            <a href="../../videos/Assignment 7 Part 2.mp4.mp4" class="media-link" data-type="video">
+                                <video src="../../videos/Assignment 7 Part 2.mp4.mp4" alt="Walk Cycle" class="assignment-media" controls muted preload="metadata"></video>
+                            </a>
+                        </div>
                     </div>
                     
                     <!-- Assignment 8 -->
-                    <div class="assignment-card">
+                    <div class="assignment-card assignment-card-large">
                         <div class="assignment-title">Assignment 8: Jump</div>
-                        <a href="../../other assets/Assignment 8 Part 1.png" class="media-link" data-type="img">
-                            <img src="../../other assets/Assignment 8 Part 1.png" alt="Jump" class="assignment-media">
-                        </a>
-                        <a href="../../videos/Assignment 8 Part 2.mp4.mp4" class="media-link" data-type="video">
-                            <video src="../../videos/Assignment 8 Part 2.mp4.mp4" alt="Jump" class="assignment-media" controls muted preload="metadata"></video>
-                        </a>
+                        <div class="assignment-media-group">
+                            <a href="../../other assets/Assignment 8 Part 1.png" class="media-link" data-type="img">
+                                <img src="../../other assets/Assignment 8 Part 1.png" alt="Jump" class="assignment-media">
+                            </a>
+                            <a href="../../videos/Assignment 8 Part 2.mp4.mp4" class="media-link" data-type="video">
+                                <video src="../../videos/Assignment 8 Part 2.mp4.mp4" alt="Jump" class="assignment-media" controls muted preload="metadata"></video>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
