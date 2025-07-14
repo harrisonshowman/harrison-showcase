@@ -5,12 +5,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>WineAbout App - Harrison Showman</title>
-    
     <!-- Modern font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -18,162 +16,125 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
     <link rel="manifest" href="site.webmanifest" />
-    
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/projects.css">
+    <style>
+        .project-summary {
+            max-width: 700px;
+            margin: 2rem auto 2rem auto;
+            text-align: center;
+            color: #cfcfe2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .logo-placeholder, .video-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem auto;
+            background: #232336;
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        }
+        .logo-placeholder {
+            width: 160px;
+            height: 160px;
+        }
+        .logo-placeholder span {
+            color: #fff;
+            font-size: 2.5rem;
+            opacity: 0.7;
+        }
+        .video-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 340px;
+        }
+        .video-placeholder span {
+            color: #fff;
+            font-size: 1.3rem;
+            opacity: 0.7;
+        }
+        .dev-process {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: rgba(30,30,40,0.95);
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 1.5rem 2rem;
+            color: #cfcfe2;
+        }
+        .github-link {
+            display: flex;
+            justify-content: center;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+        .github-link a {
+            padding: 0.8rem 2rem;
+            border-radius: 0.7rem;
+            background: #6c63ff;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.15s;
+        }
+        .github-link a:hover {
+            background: #554fd8;
+        }
+    </style>
 </head>
 <body>
     <!-- Loading screen -->
     <div class="loader">
         <div class="loader-inner"></div>
     </div>
-    
     <!-- Animated background elements -->
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
-    
     <!-- Cursor glow effect -->
     <div class="cursor-glow"></div>
-    
     <div class="container">
         <header>
             <h1 class="glitch" data-text="WineAbout">WineAbout</h1>
-            <p>A modern wine journaling and discovery app</p>
         </header>
-        
         <main>
-            <!-- Use this for your back/home button -->
             <a href="../../html/projects.html" class="button-accent margin-bottom-3">
                 <span>← Back to Projects</span>
             </a>
-            
-            <section class="project-showcase">
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h2 class="project-title-large">Discover, Track, and Share Your Wine Journey</h2>
-                            <p class="project-subtitle">
-                                WineAbout transforms how wine enthusiasts discover, track, and share their favorite wines. 
-                                Built with React Native and Firebase, this social wine journal combines beautiful design 
-                                with powerful features.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">React Native</span>
-                                <span class="tech-badge">Firebase</span>
-                                <span class="tech-badge">SwiftUI</span>
-                                <span class="tech-badge">Node.js</span>
-                            </div>
-                        </div>
-                        <div class="hero-image">
-                            <div class="phone-mockup">
-                                <img src="wineabout-screenshot.png" alt="WineAbout App Screenshot" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features-section">
-                    <h3 class="section-title">Key Features</h3>
-                    <div class="features-grid">
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🍷</div>
-                            <h4>Wine Journal</h4>
-                            <p>Track your wine experiences with detailed tasting notes, ratings, and personal memories.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🔍</div>
-                            <h4>Smart Discovery</h4>
-                            <p>Get personalized recommendations based on your taste preferences and rating history.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">👥</div>
-                            <h4>Social Sharing</h4>
-                            <p>Connect with friends, share reviews, and discover wines through your trusted network.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">📸</div>
-                            <h4>Label Scanner</h4>
-                            <p>Quickly add wines by scanning labels with AI-powered recognition technology.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="process-section">
-                    <h3 class="section-title">Development Process</h3>
-                    <div class="process-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker">1</div>
-                            <div class="timeline-content">
-                                <h4>Research & Design</h4>
-                                <p>Conducted user interviews with wine enthusiasts and created wireframes focusing on intuitive navigation.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker">2</div>
-                            <div class="timeline-content">
-                                <h4>Architecture Planning</h4>
-                                <p>Designed scalable Firebase backend architecture with real-time sync and offline capabilities.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker">3</div>
-                            <div class="timeline-content">
-                                <h4>Development</h4>
-                                <p>Built cross-platform app with React Native, implementing custom animations and native features.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker">4</div>
-                            <div class="timeline-content">
-                                <h4>Testing & Launch</h4>
-                                <p>Beta tested with 100+ users, refined based on feedback, and launched on App Store and Google Play.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="results-section">
-                    <h3 class="section-title">Results & Impact</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">10K+</div>
-                            <div class="stat-label">Active Users</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">4.8★</div>
-                            <div class="stat-label">App Store Rating</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">50K+</div>
-                            <div class="stat-label">Wines Cataloged</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">95%</div>
-                            <div class="stat-label">User Retention</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cta-section">
-                    <h3>Want to Learn More?</h3>
-                    <div class="cta-buttons">
-                        <a href="https://github.com/harrisonshowman/wineabout" target="_blank" class="button-accent">
-                            <span>View on GitHub</span>
-                        </a>
-                        <a href="https://apps.apple.com/wineabout" target="_blank" class="button-secondary">
-                            <span>Download App</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+            <div class="project-summary">
+                WineAbout is a modern mobile app for wine journaling and discovery. 
+                Users can track their wine experiences, rate and review bottles, and explore new wines through a clean, intuitive interface.
+                The app is designed for both casual drinkers and wine enthusiasts looking to document and share their wine journey.
+            </div>
+            <div class="logo-placeholder">
+                <span>App Logo<br/>(placeholder)</span>
+            </div>
+            <div class="video-placeholder">
+                <span>Demo Video<br/>(placeholder)</span>
+            </div>
+            <div class="dev-process">
+                <h3 style="margin-top:0;">Development Process & My Contributions</h3>
+                <p>
+                    I served as the front-end and client-side developer for WineAbout. My responsibilities included:
+                </p>
+                <ul style="margin-left:1.2em;">
+                    <li>Building the mobile UI with React Native, focusing on a seamless and visually appealing user experience.</li>
+                    <li>Implementing navigation, state management, and integration with Firebase for real-time data sync.</li>
+                    <li>Developing custom components for wine journaling, search, and social features.</li>
+                    <li>Collaborating with designers and backend developers to ensure a cohesive product vision.</li>
+                    <li>Testing and refining the app based on user feedback and usability studies.</li>
+                </ul>
+            </div>
+            <div class="github-link">
+                <a href="https://github.com/harrisonshowman/wineabout" target="_blank">View on GitHub</a>
+            </div>
         </main>
-        
         <footer>
             <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
         </footer>
     </div>
-    
     <script>
         // Failsafe loader removal - ensures loader is hidden even if main.js fails
         (function() {
@@ -183,7 +144,6 @@
                     loader.style.display = 'none';
                 }
             }
-            
             // Hide loader after DOM is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
@@ -192,12 +152,10 @@
             } else {
                 setTimeout(hideLoader, 500);
             }
-            
             // Fallback: hide loader after window loads
             window.addEventListener('load', function() {
                 setTimeout(hideLoader, 1000);
             });
-            
             // Emergency fallback: hide loader after 3 seconds regardless
             setTimeout(hideLoader, 3000);
         })();
