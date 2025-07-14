@@ -82,6 +82,46 @@
         .github-link a:hover {
             background: #554fd8;
         }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        .feature-card {
+            background: rgba(30,30,40,0.95);
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card h3 {
+            color: #6c63ff;
+            margin: 0 0 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            color: #cfcfe2;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .features-heading {
+            text-align: center;
+            color: #fff;
+            margin: 3rem 0 1rem 0;
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -108,6 +148,35 @@
                 Users can track their wine experiences, rate and review bottles, and explore new wines through a clean, intuitive interface.
                 The app is designed for both casual drinkers and wine enthusiasts looking to document and share their wine journey.
             </div>
+
+            <h2 class="features-heading">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Personal Wine Journals</h3>
+                    <p>Create custom notebooks to organize your wine experiences. Add detailed tasting notes, photos, and ratings for each wine you try.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Bottle Collections</h3>
+                    <p>Build and manage collections of your favorite wines. Create wishlists, cellar inventory, or themed collections to share with friends.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Social Discovery</h3>
+                    <p>Connect with fellow wine enthusiasts, share recommendations, and discover new wines through your network's experiences.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Smart Search</h3>
+                    <p>Find wines by variety, region, price range, or food pairings. Save your preferences for personalized recommendations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Tasting History</h3>
+                    <p>Track your wine journey with a beautifully organized timeline of your tastings, complete with photos and memories.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Community Ratings</h3>
+                    <p>See what others think about wines you're interested in, and contribute your own ratings to help the community.</p>
+                </div>
+            </div>
+
             <div class="logo-placeholder">
                 <span>App Logo<br/>(placeholder)</span>
             </div>
