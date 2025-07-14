@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Maze Game - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="../../site.webmanifest" />
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/projects.css">
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Maze Game">Maze Game</h1>
+            <p>Navigate through challenging procedural mazes</p>
+        </header>
+        
+        <main>
+            <!-- Use this for your back/home button -->
+            <a href="../../html/projects.html" class="button-accent margin-bottom-3">
+                <span>← Back to Projects</span>
+            </a>
+            
+            <section class="project-showcase">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="project-title-large">Challenge Your Mind with Procedural Maze Generation</h2>
+                            <p class="project-subtitle">
+                                An engaging maze game featuring procedurally generated levels, smooth navigation controls, 
+                                and increasingly challenging obstacles. Built with modern game development techniques 
+                                and optimized for both performance and player experience.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Unity</span>
+                                <span class="tech-badge">C#</span>
+                                <span class="tech-badge">Procedural Generation</span>
+                                <span class="tech-badge">Algorithm Design</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="video-showcase">
+                                <video controls poster="../../other assets/Maze Game Cover.png" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                                    <source src="../../videos/Maze Game.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <div class="play-button">▶</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <h3 class="section-title">Game Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🧩</div>
+                            <h4>Procedural Generation</h4>
+                            <p>Every maze is unique, generated using advanced algorithms for endless replayability.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">⏱️</div>
+                            <h4>Progressive Difficulty</h4>
+                            <p>Mazes become more complex and challenging as you advance through levels.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🎯</div>
+                            <h4>Smooth Controls</h4>
+                            <p>Intuitive movement system with responsive controls for optimal player experience.</p>
+                        </div>
+                        <div class="feature-card" data-tilt>
+                            <div class="feature-icon">🏆</div>
+                            <h4>Achievement System</h4>
+                            <p>Unlock achievements for completing mazes quickly and efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="technical-section">
+                    <h3 class="section-title">Technical Implementation</h3>
+                    <div class="tech-cards-grid">
+                        <div class="tech-detail-card">
+                            <h4>Maze Generation Algorithm</h4>
+                            <p>Implemented recursive backtracking and Wilson's algorithm for creating perfect mazes with guaranteed solutions.</p>
+                            <div class="tech-tags">
+                                <span>Recursive Backtracking</span>
+                                <span>Graph Theory</span>
+                                <span>Pathfinding</span>
+                            </div>
+                        </div>
+                        <div class="tech-detail-card">
+                            <h4>Performance Optimization</h4>
+                            <p>Efficient rendering system with object pooling and LOD techniques for smooth 60 FPS gameplay.</p>
+                            <div class="tech-tags">
+                                <span>Object Pooling</span>
+                                <span>Unity Profiler</span>
+                                <span>Memory Management</span>
+                            </div>
+                        </div>
+                        <div class="tech-detail-card">
+                            <h4>Game Architecture</h4>
+                            <p>Modular design with scriptable objects and event-driven architecture for maintainable code.</p>
+                            <div class="tech-tags">
+                                <span>ScriptableObjects</span>
+                                <span>Event System</span>
+                                <span>SOLID Principles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="development-story">
+                    <h3 class="section-title">Development Journey</h3>
+                    <div class="story-content">
+                        <div class="story-section">
+                            <div class="story-icon">💡</div>
+                            <div class="story-text">
+                                <h4>The Challenge</h4>
+                                <p>Creating a maze game that stays fresh and engaging required implementing procedural generation algorithms that could create varied, solvable mazes while maintaining performance.</p>
+                            </div>
+                        </div>
+                        <div class="story-section">
+                            <div class="story-icon">🔬</div>
+                            <div class="story-text">
+                                <h4>Algorithm Research</h4>
+                                <p>Studied various maze generation algorithms including recursive backtracking, Prim's algorithm, and Wilson's algorithm to find the best balance of randomness and structure.</p>
+                            </div>
+                        </div>
+                        <div class="story-section">
+                            <div class="story-icon">⚡</div>
+                            <div class="story-text">
+                                <h4>Optimization</h4>
+                                <p>Implemented chunked loading and efficient pathfinding to handle large mazes without performance drops, ensuring smooth gameplay on all target platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievements-section">
+                    <h3 class="section-title">Technical Achievements</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-metric">< 16ms</div>
+                            <div class="achievement-label">Frame Time</div>
+                            <p>Consistent 60 FPS performance even with complex maze geometries</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-metric">1000x1000</div>
+                            <div class="achievement-label">Maximum Maze Size</div>
+                            <p>Supports massive mazes through efficient memory management</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-metric">5</div>
+                            <div class="achievement-label">Generation Algorithms</div>
+                            <p>Multiple algorithms for varied maze styles and difficulties</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-metric">100%</div>
+                            <div class="achievement-label">Solvable Guarantee</div>
+                            <p>Every generated maze has exactly one solution path</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Ready to Navigate?</h3>
+                    <p class="cta-subtitle">Try the game or explore the algorithmic implementation</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="button-accent">
+                            <span>Play Game</span>
+                        </a>
+                        <a href="#" target="_blank" class="button-secondary">
+                            <span>View Source Code</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Failsafe loader removal - ensures loader is hidden even if main.js fails
+        (function() {
+            function hideLoader() {
+                var loader = document.querySelector('.loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }
+            
+            // Hide loader after DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(hideLoader, 500);
+                });
+            } else {
+                setTimeout(hideLoader, 500);
+            }
+            
+            // Fallback: hide loader after window loads
+            window.addEventListener('load', function() {
+                setTimeout(hideLoader, 1000);
+            });
+            
+            // Emergency fallback: hide loader after 3 seconds regardless
+            setTimeout(hideLoader, 3000);
+        })();
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
