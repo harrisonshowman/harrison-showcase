@@ -74,11 +74,6 @@
             <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
         </footer>
     </div>
-    <!-- Modal for enlarged video -->
-    <div id="video-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,30,0.92);align-items:center;justify-content:center;">
-        <span id="video-modal-close" style="position:absolute;top:2rem;right:2rem;font-size:2.5rem;color:#fff;cursor:pointer;z-index:10001;">&times;</span>
-        <div id="video-modal-content" style="max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center;"></div>
-    </div>
     <script>
         // Failsafe loader removal - ensures loader is hidden even if main.js fails
         (function() {
@@ -106,59 +101,6 @@
             // Emergency fallback: hide loader after 3 seconds regardless
             setTimeout(hideLoader, 3000);
         })();
-
-        // Video modal popup
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('demo-video');
-            const modal = document.getElementById('video-modal');
-            const modalContent = document.getElementById('video-modal-content');
-            const closeBtn = document.getElementById('video-modal-close');
-            let modalVideo = null;
-
-            video.addEventListener('click', function(e) {
-                // Pause the inline video if playing
-                video.pause();
-                // Create a new video element for the modal
-                modalContent.innerHTML = '';
-                modalVideo = document.createElement('video');
-                modalVideo.src = video.querySelector('source').src;
-                modalVideo.poster = video.poster;
-                modalVideo.controls = true;
-                modalVideo.autoplay = true;
-                modalVideo.style.maxWidth = '90vw';
-                modalVideo.style.maxHeight = '90vh';
-                modalContent.appendChild(modalVideo);
-                modal.style.display = 'flex';
-            });
-
-            closeBtn.addEventListener('click', function() {
-                modal.style.display = 'none';
-                if (modalVideo) {
-                    modalVideo.pause();
-                }
-                modalContent.innerHTML = '';
-            });
-
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    if (modalVideo) {
-                        modalVideo.pause();
-                    }
-                    modalContent.innerHTML = '';
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    modal.style.display = 'none';
-                    if (modalVideo) {
-                        modalVideo.pause();
-                    }
-                    modalContent.innerHTML = '';
-                }
-            });
-        });
     </script>
     <script src="../js/main.js"></script>
 </body>
