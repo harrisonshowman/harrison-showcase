@@ -19,6 +19,50 @@
     <link rel="manifest" href="../../site.webmanifest" />
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/projects.css">
+    <style>
+        .assignments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .assignment-card {
+            background: rgba(30,30,40,0.95);
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 1.5rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+            text-align: center;
+        }
+        
+        .assignment-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+        
+        .assignment-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .assignment-media {
+            width: 100%;
+            border-radius: 0.7rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        }
+        
+        .project-summary {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            color: #cfcfe2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <!-- Loading screen -->
@@ -41,188 +85,66 @@
         </header>
         
         <main>
-            <!-- Use this for your back/home button -->
             <a href="../../html/projects.html" class="button-accent margin-bottom-3">
                 <span>← Back to Projects</span>
             </a>
             
             <section class="project-showcase">
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h2 class="project-title-large">Crafting Lifelike Digital Characters for Immersive Experiences</h2>
-                            <p class="project-subtitle">
-                                From concept to final render, I create expressive 3D character animations that breathe life into 
-                                games, AR/VR experiences, and digital storytelling. Using industry-standard tools like Blender 
-                                and Unity, I focus on creating characters that connect with audiences.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-badge">Blender</span>
-                                <span class="tech-badge">Unity</span>
-                                <span class="tech-badge">Maya</span>
-                                <span class="tech-badge">Substance Painter</span>
-                                <span class="tech-badge">Mixamo</span>
-                            </div>
-                        </div>
-                        <div class="hero-image">
-                            <div class="animation-showcase">
-                                <img src="images/characteranimation1.png" alt="3D Character Animation" />
-                                <div class="animation-overlay"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p class="project-summary">
+                    This collection showcases my journey through a 3D character animation course,
+                    starting from concept art, then modeling, and finally animating a character.
+                    Each assignment builds on the last, demonstrating my growth in skills and understanding of animation principles.
+                </p>
                 
-                <div class="features-section">
-                    <h3 class="section-title">Animation Expertise</h3>
-                    <div class="features-grid">
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🎭</div>
-                            <h4>Character Rigging</h4>
-                            <p>Advanced bone systems and IK/FK setups for natural, fluid movement and easy animation control.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🎬</div>
-                            <h4>Motion Capture</h4>
-                            <p>Integration and cleanup of mocap data to create realistic human movements and expressions.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">🎮</div>
-                            <h4>Game-Ready Assets</h4>
-                            <p>Optimized models and animations for real-time rendering in Unity and Unreal Engine.</p>
-                        </div>
-                        <div class="feature-card" data-tilt>
-                            <div class="feature-icon">✨</div>
-                            <h4>VFX Integration</h4>
-                            <p>Seamless blend of character animation with particle effects and environmental interactions.</p>
-                        </div>
+                <div class="assignments-grid">
+                    <!-- Assignment 1 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 1: Concept Art</div>
+                        <img src="../../other assets/Assignment 1.png" alt="Concept Art" class="assignment-media">
                     </div>
-                </div>
-                
-                <div class="portfolio-section">
-                    <h3 class="section-title">Featured Works</h3>
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item">
-                            <div class="portfolio-image">
-                                <img src="images/character-warrior.png" alt="Fantasy Warrior" />
-                                <div class="portfolio-overlay">
-                                    <h4>Fantasy Warrior</h4>
-                                    <p>High-poly character with 50+ unique animations</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-image">
-                                <img src="images/character-robot.png" alt="Sci-Fi Robot" />
-                                <div class="portfolio-overlay">
-                                    <h4>Sci-Fi Mech</h4>
-                                    <p>Procedural animation system for mechanical movements</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item">
-                            <div class="portfolio-image">
-                                <img src="images/character-creature.png" alt="Mythical Creature" />
-                                <div class="portfolio-overlay">
-                                    <h4>Mythical Creature</h4>
-                                    <p>Custom rig for non-humanoid character animation</p>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    <!-- Assignment 2 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 2: Block Model</div>
+                        <img src="../../other assets/Assignment 2.png" alt="Block Model" class="assignment-media">
                     </div>
-                </div>
-                
-                <div class="process-section">
-                    <h3 class="section-title">Animation Pipeline</h3>
-                    <div class="pipeline-flow">
-                        <div class="pipeline-step" data-step="1">
-                            <div class="step-icon">📝</div>
-                            <h4>Concept & Reference</h4>
-                            <p>Gathering references and creating concept art to define character personality and movement style.</p>
-                        </div>
-                        <div class="pipeline-arrow">→</div>
-                        <div class="pipeline-step" data-step="2">
-                            <div class="step-icon">🗿</div>
-                            <h4>Modeling & Sculpting</h4>
-                            <p>Creating high-quality 3D models with attention to anatomy and deformation requirements.</p>
-                        </div>
-                        <div class="pipeline-arrow">→</div>
-                        <div class="pipeline-step" data-step="3">
-                            <div class="step-icon">🦴</div>
-                            <h4>Rigging & Skinning</h4>
-                            <p>Building flexible bone systems and weight painting for natural deformations.</p>
-                        </div>
-                        <div class="pipeline-arrow">→</div>
-                        <div class="pipeline-step" data-step="4">
-                            <div class="step-icon">🎯</div>
-                            <h4>Animation & Polish</h4>
-                            <p>Keyframe animation, motion capture integration, and final polish for production.</p>
-                        </div>
+                    
+                    <!-- Assignment 3 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 3: Gray Model</div>
+                        <img src="../../other assets/Assignment 3.png" alt="Gray Model" class="assignment-media">
                     </div>
-                </div>
-                
-                <div class="technical-section">
-                    <h3 class="section-title">Technical Achievements</h3>
-                    <div class="achievements-grid">
-                        <div class="achievement-card">
-                            <div class="achievement-metric">60 FPS</div>
-                            <div class="achievement-label">Real-time Performance</div>
-                            <p>Optimized animations maintain smooth framerates even on mobile devices</p>
-                        </div>
-                        <div class="achievement-card">
-                            <div class="achievement-metric">< 5MB</div>
-                            <div class="achievement-label">Compressed Assets</div>
-                            <p>Advanced compression techniques without sacrificing animation quality</p>
-                        </div>
-                        <div class="achievement-card">
-                            <div class="achievement-metric">200+</div>
-                            <div class="achievement-label">Animation Library</div>
-                            <p>Extensive collection of reusable animations for rapid prototyping</p>
-                        </div>
-                        <div class="achievement-card">
-                            <div class="achievement-metric">4K</div>
-                            <div class="achievement-label">Texture Resolution</div>
-                            <p>High-resolution textures with PBR materials for photorealistic rendering</p>
-                        </div>
+                    
+                    <!-- Assignment 4 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 4: Gray Model Pose Test</div>
+                        <img src="../../other assets/Assignment 4.png" alt="Gray Model Pose Test" class="assignment-media">
                     </div>
-                </div>
-                
-                <div class="tools-section">
-                    <h3 class="section-title">Tools & Workflow</h3>
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <img src="images/blender-logo.png" alt="Blender" />
-                            <h4>Blender</h4>
-                            <p>Primary tool for modeling, rigging, and animation</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="images/unity-logo.png" alt="Unity" />
-                            <h4>Unity</h4>
-                            <p>Real-time rendering and animation state machines</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="images/substance-logo.png" alt="Substance" />
-                            <h4>Substance Suite</h4>
-                            <p>PBR texturing and material creation</p>
-                        </div>
-                        <div class="tool-card">
-                            <img src="images/zbrush-logo.png" alt="ZBrush" />
-                            <h4>ZBrush</h4>
-                            <p>High-poly sculpting and detail work</p>
-                        </div>
+                    
+                    <!-- Assignment 5 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 5: Costume Model</div>
+                        <img src="../../other assets/Assignment 5.png" alt="Costume Model" class="assignment-media">
                     </div>
-                </div>
-                
-                <div class="cta-section">
-                    <h3>Want to See More?</h3>
-                    <p class="cta-subtitle">Check out my animation reel or explore the project files</p>
-                    <div class="cta-buttons">
-                        <a href="https://vimeo.com/harrisonshowman" target="_blank" class="button-accent">
-                            <span>View Demo Reel</span>
-                        </a>
-                        <a href="https://github.com/harrisonshowman/3d-animations" target="_blank" class="button-secondary">
-                            <span>Project Files</span>
-                        </a>
+                    
+                    <!-- Assignment 6 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 6: Rigging and Animation</div>
+                        <video src="../../videos/Assignment 6.mp4" alt="Rigging and Animation" class="assignment-media">
+                    </div>
+                    
+                    <!-- Assignment 7 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 7: Walk Cycle</div>
+                        <img src="../../other assets/Assignment 7 Part 1.png" alt="Walk Cycle" class="assignment-media">
+                        <video src="../../videos/Assignment 7 Part 2.mp4.mp4" alt="Walk Cycle" class="assignment-media"></video>
+                    </div>
+                    
+                    <!-- Assignment 8 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 8: Jump</div>
+                        <img src="../../other assets/Assignment 8 Part 1.png" alt="Jump" class="assignment-media">
+                        <video src="../../videos/Assignment 8 Part 2.mp4.mp4" alt="Jump" class="assignment-media"></video>
                     </div>
                 </div>
             </section>
@@ -234,7 +156,7 @@
     </div>
     
     <script>
-        // Failsafe loader removal - ensures loader is hidden even if main.js fails
+        // Failsafe loader removal
         (function() {
             function hideLoader() {
                 var loader = document.querySelector('.loader');
@@ -243,7 +165,6 @@
                 }
             }
             
-            // Hide loader after DOM is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(hideLoader, 500);
@@ -252,15 +173,13 @@
                 setTimeout(hideLoader, 500);
             }
             
-            // Fallback: hide loader after window loads
             window.addEventListener('load', function() {
                 setTimeout(hideLoader, 1000);
             });
             
-            // Emergency fallback: hide loader after 3 seconds regardless
             setTimeout(hideLoader, 3000);
         })();
     </script>
-    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>
