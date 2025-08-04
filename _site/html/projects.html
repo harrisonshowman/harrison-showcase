@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="../site.webmanifest" />
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle">
+        <span class="icon">🌙</span> Dark Mode
+    </button>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Projects">Projects</h1>
+            <p class="tagline">Explore my portfolio of creative projects</p>
+        </header>
+        
+        <main>
+            <a href="../html/home.html" class="button-accent margin-bottom-3">
+                <span>← Back to Home</span>
+            </a>
+            
+            <section class="projects">
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="../html/projects/wineabout.html">
+                        <h2 class="project-title">WineAbout</h2>
+                        <p class="project-desc">
+                            A social platform for wine lovers to share reviews, discover new wines, and connect with fellow enthusiasts.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Social App</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="../html/projects/3dcharacteranimation.html">
+                        <h2 class="project-title">3D Character Animation</h2>
+                        <p class="project-desc">
+                            Lifelike 3D character animations for games and AR/VR experiences using Blender & Unity.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">3D Animation</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="../html/projects/gamedevelopmentinunity.html">
+                        <h2 class="project-title">Game Development (Unity)</h2>
+                        <p class="project-desc">
+                            A showcase of my skills in Unity and C#, featuring various game mechanics and design principles.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Game Development</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="../html/projects/picturelocationapp.html">
+                        <h2 class="project-title">PictureLocation App</h2>
+                        <p class="project-desc">
+                            Mobile app that tags your photos with GPS data, helping you remember where every picture was taken.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Swift</span>
+                            <span class="tag">iOS</span>
+                            <span class="tag">Geolocation</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="../html/projects/flappyfootball.html">
+                        <h2 class="project-title">Flappy Football</h2>
+                        <p class="project-desc">
+                            A fun, fast-paced mobile game inspired by Flappy Bird, with a football twist.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Learning</span>
+                            <span class="tag">Game</span>
+                            <span class="tag">Swift</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="project-card" data-tilt>
+                    <a class="project-link" href="../html/projects/mazegame.html">
+                        <h2 class="project-title">Maze Game</h2>
+                        <p class="project-desc">
+                            Navigate through challenging procedural mazes with advanced generation algorithms.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Procedural Generation</span>
+                        </div>
+                    </a>
+                </article>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var loader = document.querySelector('.loader');
+        if (loader && loader.style.display !== 'none') {
+          loader.style.display = 'none';
+        }
+      }, 3000); // fallback after 3 seconds
+    });
+    </script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

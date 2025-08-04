@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="../../site.webmanifest" />
+    
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/datastructures.css">
+    
+    <!-- D3.js for interactive visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle">
+        <span class="icon">🌙</span> Dark Mode
+    </button>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Algorithms">Algorithms</h1>
+            <p class="tagline">Visual guide to fundamental algorithms</p>
+        </header>
+        
+        <main>
+            <a href="../exploreCS.html" class="button-accent margin-bottom-3">
+                <span>← Back to CS Topics</span>
+            </a>
+            
+            <section class="data-structures-grid">
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Binary Search</h2>
+                        <p class="structure-desc">
+                            Efficiently finds the position of a target value within a sorted array.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">O(log n)</span>
+                            <span class="feature">Divide & Conquer</span>
+                            <span class="feature">Sorted Arrays</span>
+                        </div>
+                        <pre><code>// JavaScript
+function binarySearch(arr, target) {
+    let left = 0, right = arr.length - 1;
+    while (left &lt;= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) return mid;
+        if (arr[mid] &lt; target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+</code></pre>
+                    </div>
+                </article>
+
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Quick Sort</h2>
+                        <p class="structure-desc">
+                            A fast, divide-and-conquer sorting algorithm.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">O(n log n)</span>
+                            <span class="feature">Divide & Conquer</span>
+                            <span class="feature">In-place</span>
+                        </div>
+                        <pre><code>// Python
+def quick_sort(arr):
+    if len(arr) &lt;= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x &lt; pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x &gt; pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+</code></pre>
+                    </div>
+                </article>
+
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Dijkstra's Algorithm</h2>
+                        <p class="structure-desc">
+                            Finds the shortest path from a source node to all other nodes in a weighted graph.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">O((V+E) log V)</span>
+                            <span class="feature">Shortest Path</span>
+                            <span class="feature">Graph Algorithm</span>
+                        </div>
+                        <pre><code>// Python
+import heapq
+
+def dijkstra(graph, start):
+    queue = [(0, start)]
+    distances = {v: float('inf') for v in graph}
+    distances[start] = 0
+    while queue:
+        curr_dist, u = heapq.heappop(queue)
+        if curr_dist &gt; distances[u]:
+            continue
+        for v, weight in graph[u]:
+            distance = curr_dist + weight
+            if distance &lt; distances[v]:
+                distances[v] = distance
+                heapq.heappush(queue, (distance, v))
+    return distances
+</code></pre>
+                    </div>
+                </article>
+
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Merge Sort</h2>
+                        <p class="structure-desc">
+                            A stable, divide-and-conquer sorting algorithm.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">O(n log n)</span>
+                            <span class="feature">Stable</span>
+                            <span class="feature">Divide & Conquer</span>
+                        </div>
+                        <pre><code>// JavaScript
+function mergeSort(arr) {
+    if (arr.length &lt;= 1) return arr;
+    const mid = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid));
+    const right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+function merge(left, right) {
+    const result = [];
+    while (left.length &amp;&amp; right.length) {
+        if (left[0] &lt; right[0]) result.push(left.shift());
+        else result.push(right.shift());
+    }
+    return result.concat(left, right);
+}
+</code></pre>
+                    </div>
+                </article>
+
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Floyd-Warshall</h2>
+                        <p class="structure-desc">
+                            Computes shortest paths between all pairs of nodes in a weighted graph.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">O(V³)</span>
+                            <span class="feature">All Pairs</span>
+                            <span class="feature">Dynamic Programming</span>
+                        </div>
+                        <pre><code>// Python
+def floyd_warshall(graph):
+    dist = [row[:] for row in graph]
+    n = len(graph)
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                if dist[i][j] &gt; dist[i][k] + dist[k][j]:
+                    dist[i][j] = dist[i][k] + dist[k][j]
+    return dist
+</code></pre>
+                    </div>
+                </article>
+
+                <article class="structure-card" data-tilt>
+                    <div class="structure-content">
+                        <h2 class="structure-title">Kadane's Algorithm</h2>
+                        <p class="structure-desc">
+                            Finds the maximum sum subarray in a 1D array.
+                        </p>
+                        <div class="structure-features">
+                            <span class="feature">O(n)</span>
+                            <span class="feature">Dynamic Programming</span>
+                            <span class="feature">Optimization</span>
+                        </div>
+                        <pre><code>// JavaScript
+function maxSubArray(nums) {
+    let maxSum = nums[0], currSum = nums[0];
+    for (let i = 1; i &lt; nums.length; i++) {
+        currSum = Math.max(nums[i], currSum + nums[i]);
+        maxSum = Math.max(maxSum, currSum);
+    }
+    return maxSum;
+}
+</code></pre>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script src="../../js/main.js"></script>
+    
+    <!-- Tilt.js for 3D card hover effects -->
+    <script type="text/javascript" src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script>
+        // Initialize tilt effect on cards
+        VanillaTilt.init(document.querySelectorAll(".structure-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+        });
+    </script>
+</body>
+</html>

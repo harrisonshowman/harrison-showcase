@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/harrison-showcase/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List - Data Structures</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="../../site.webmanifest" />
+    
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/datastructures.css">
+    
+    <style>
+        .code-vis-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            min-height: 400px;
+        }
+        
+        .code-section {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .visualization-section {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .action-button {
+            background: linear-gradient(90deg, #39FF14 0%, #00C8B4 100%);
+            color: #0a0a0a;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(57, 255, 20, 0.2);
+        }
+        
+        #linkedListVis {
+            width: 100%;
+            height: 300px;
+        }
+        
+        .node circle {
+            fill: #39FF14;
+            stroke: #00C8B4;
+            stroke-width: 2px;
+        }
+        
+        .node text {
+            fill: #fff;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            font-size: 14px;
+        }
+        
+        .link {
+            stroke: #00C8B4;
+            stroke-width: 2px;
+            marker-end: url(#arrow);
+        }
+        
+        @media (max-width: 768px) {
+            .code-vis-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="Linked List">Linked List</h1>
+            <p class="tagline">A dynamic, sequential data structure</p>
+        </header>
+        
+        <main>
+            <a href="datastructures.html" class="button-accent margin-bottom-3">
+                <span>← Back to Data Structures</span>
+            </a>
+            
+            <section class="intro">
+                <h2>What is a Linked List?</h2>
+                <p>
+                    A linked list is a linear data structure where elements are stored in nodes, and each node 
+                    points to the next node in the sequence. Unlike arrays, linked lists don't require 
+                    contiguous memory allocation, making them flexible for insertions and deletions.
+                </p>
+            </section>
+            
+            <section class="code-vis-container">
+                <div class="code-section">
+                    <div class="controls">
+                        <button class="action-button" onclick="addNode()">Add Node</button>
+                        <button class="action-button" onclick="removeNode()">Remove Node</button>
+                        <button class="action-button" onclick="insertAt()">Insert At</button>
+                    </div>
+                    <pre><code>
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+    
+    append(value) {
+        const newNode = new Node(value);
+        
+        if (!this.head) {
+            this.head = newNode;
+            return;
+        }
+        
+        let current = this.head;
+        while (current.next) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+}
+                    </code></pre>
+                </div>
+                <div class="visualization-section">
+                    <svg id="linkedListVis">
+                        <defs>
+                            <marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0"
+                                markerWidth="6" markerHeight="6" orient="auto">
+                                <path d="M0,-5L10,0L0,5" fill="#00C8B4"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+            </section>
+            
+            <section class="implementation-details">
+                <h2>Key Operations</h2>
+                <div class="operations-grid">
+                    <div class="operation">
+                        <h3>Insertion</h3>
+                        <p>O(1) at beginning, O(n) at end or middle</p>
+                    </div>
+                    <div class="operation">
+                        <h3>Deletion</h3>
+                        <p>O(1) at beginning, O(n) at end or middle</p>
+                    </div>
+                    <div class="operation">
+                        <h3>Search</h3>
+                        <p>O(n) - must traverse the list</p>
+                    </div>
+                    <div class="operation">
+                        <h3>Access</h3>
+                        <p>O(n) - no random access</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script>
+        // D3.js Linked List Visualization
+        const width = document.getElementById('linkedListVis').clientWidth;
+        const height = 300;
+        const nodeRadius = 25;
+        
+        const svg = d3.select('#linkedListVis')
+            .attr('width', width)
+            .attr('height', height);
+            
+        let nodes = [];
+        let links = [];
+        
+        function updateVisualization() {
+            // Update nodes
+            const node = svg.selectAll('.node')
+                .data(nodes, d => d.id);
+                
+            const nodeEnter = node.enter()
+                .append('g')
+                .attr('class', 'node')
+                .attr('transform', (d, i) => `translate(${50 + i * 100},${height/2})`);
+                
+            nodeEnter.append('circle')
+                .attr('r', nodeRadius)
+                .style('fill', '#39FF14')
+                .style('stroke', '#00C8B4')
+                .style('stroke-width', '2px');
+                
+            nodeEnter.append('text')
+                .text(d => d.value)
+                .attr('dy', '.3em');
+                
+            node.transition()
+                .duration(500)
+                .attr('transform', (d, i) => `translate(${50 + i * 100},${height/2})`);
+                
+            node.exit().remove();
+            
+            // Update links
+            const link = svg.selectAll('.link')
+                .data(links, d => `${d.source.id}-${d.target.id}`);
+                
+            link.enter()
+                .append('path')
+                .attr('class', 'link')
+                .merge(link)
+                .attr('d', d => {
+                    const sourceX = 50 + d.source.index * 100;
+                    const targetX = 50 + d.target.index * 100;
+                    return `M${sourceX + nodeRadius},${height/2} L${targetX - nodeRadius},${height/2}`;
+                });
+                
+            link.exit().remove();
+        }
+        
+        let nodeId = 0;
+        
+        function addNode() {
+            const value = Math.floor(Math.random() * 100);
+            nodes.push({ id: nodeId++, value, index: nodes.length });
+            
+            if (nodes.length > 1) {
+                links.push({
+                    source: nodes[nodes.length - 2],
+                    target: nodes[nodes.length - 1]
+                });
+            }
+            
+            updateVisualization();
+        }
+        
+        function removeNode() {
+            if (nodes.length > 0) {
+                nodes.pop();
+                if (links.length > 0) {
+                    links.pop();
+                }
+                updateVisualization();
+            }
+        }
+        
+        function insertAt() {
+            if (nodes.length === 0) {
+                addNode();
+                return;
+            }
+            
+            const position = Math.floor(Math.random() * (nodes.length));
+            const value = Math.floor(Math.random() * 100);
+            
+            nodes.splice(position, 0, { id: nodeId++, value, index: position });
+            nodes.forEach((node, index) => node.index = index);
+            
+            links = nodes.slice(1).map((node, i) => ({
+                source: nodes[i],
+                target: node
+            }));
+            
+            updateVisualization();
+        }
+        
+        // Initialize with a few nodes
+        addNode();
+        addNode();
+        addNode();
+    </script>
+</body>
+</html>
