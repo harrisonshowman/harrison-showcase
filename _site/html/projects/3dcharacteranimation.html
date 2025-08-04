@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>3D Character Animation - Harrison Showman</title>
+    
+    <!-- Modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="../../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Harrison Showman" />
+    <link rel="manifest" href="../../site.webmanifest" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/projects.css">
+    <style>
+        .assignments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .assignment-card {
+            background: rgba(30,30,40,0.95);
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 1.5rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+            text-align: center;
+        }
+
+        /* Larger card for assignments with two media items */
+        .assignment-card-large {
+            grid-column: span 2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .assignment-card-large .assignment-media-group {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .assignment-card-large .assignment-media {
+            width: 100%;
+            max-width: 350px;
+        }
+        @media (max-width: 900px) {
+            .assignment-card-large .assignment-media-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .assignment-card-large .assignment-media {
+                max-width: 100%;
+            }
+        }
+        
+        .assignment-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .assignment-media {
+            width: 100%;
+            border-radius: 0.7rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        }
+        
+        .project-summary {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            text-align: center;
+            color: #cfcfe2;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="3D Animation">3D Animation</h1>
+            <p>Bringing digital characters to life</p>
+        </header>
+        
+        <main>
+            <a href="../../html/projects.html" class="button-accent margin-bottom-3">
+                <span>← Back to Projects</span>
+            </a>
+            
+            <section class="project-showcase">
+                <p class="project-summary">
+                    This collection showcases my journey through a 3D character animation course,
+                    starting from concept art, then modeling, and finally animating a character.
+                    Each assignment builds on the last, demonstrating my growth in skills and understanding of animation principles.
+                </p>
+                
+                <div class="assignments-grid">
+                    <!-- Assignment 1 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 1: Concept Art</div>
+                        <a href="../../other assets/Assignment 1.png" class="media-link" data-type="img">
+                            <img src="../../other assets/Assignment 1.png" alt="Concept Art" class="assignment-media">
+                        </a>
+                    </div>
+                    
+                    <!-- Assignment 2 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 2: Block Model</div>
+                        <a href="../../other assets/Assignment 2.png" class="media-link" data-type="img">
+                            <img src="../../other assets/Assignment 2.png" alt="Block Model" class="assignment-media">
+                        </a>
+                    </div>
+                    
+                    <!-- Assignment 3 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 3: Gray Model</div>
+                        <a href="../../other assets/Assignment 3.png" class="media-link" data-type="img">
+                            <img src="../../other assets/Assignment 3.png" alt="Gray Model" class="assignment-media">
+                        </a>
+                    </div>
+                    
+                    <!-- Assignment 4 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 4: Gray Model Pose Test</div>
+                        <a href="../../other assets/Assignment 4.png" class="media-link" data-type="img">
+                            <img src="../../other assets/Assignment 4.png" alt="Gray Model Pose Test" class="assignment-media">
+                        </a>
+                    </div>
+                    
+                    <!-- Assignment 5 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 5: Costume Model</div>
+                        <a href="../../other assets/Assignment 5.png" class="media-link" data-type="img">
+                            <img src="../../other assets/Assignment 5.png" alt="Costume Model" class="assignment-media">
+                        </a>
+                    </div>
+                    
+                    <!-- Assignment 6 -->
+                    <div class="assignment-card">
+                        <div class="assignment-title">Assignment 6: Rigging and Animation</div>
+                        <a href="../../videos/Assignment 6.mp4" class="media-link" data-type="video">
+                            <img src="../../other assets/Assignment 6 Thumbnail.png" alt="Rigging and Animation" class="assignment-media">
+                        </a>
+                    </div>
+                    
+                    <!-- Assignment 7 -->
+                    <div class="assignment-card assignment-card-large">
+                        <div class="assignment-title">Assignment 7: Walk Cycle</div>
+                        <div class="assignment-media-group">
+                            <a href="../../other assets/Assignment 7 Part 1.png" class="media-link" data-type="img">
+                                <img src="../../other assets/Assignment 7 Part 1.png" alt="Walk Cycle" class="assignment-media">
+                            </a>
+                            <a href="../../videos/Assignment 7 Part 2.mp4" class="media-link" data-type="video">
+                                <img src="../../other assets/Assignment 7 Part 2 Thumbnail.png" alt="Walk Cycle Video" class="assignment-media">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Assignment 8 -->
+                    <div class="assignment-card assignment-card-large">
+                        <div class="assignment-title">Assignment 8: Jump</div>
+                        <div class="assignment-media-group">
+                            <a href="../../other assets/Assignment 8 Part 1.png" class="media-link" data-type="img">
+                                <img src="../../other assets/Assignment 8 Part 1.png" alt="Jump" class="assignment-media">
+                            </a>
+                            <a href="../../videos/Assignment 8 Part 2.mp4" class="media-link" data-type="video">
+                                <img src="../../other assets/Assignment 8 Part 2 Thumbnail.png" alt="Jump Video" class="assignment-media">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Harrison Showman. Crafted with passion.</p>
+        </footer>
+    </div>
+    
+    <!-- Modal for enlarged media -->
+    <div id="media-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,30,0.92);align-items:center;justify-content:center;">
+        <span id="media-modal-close" style="position:absolute;top:2rem;right:2rem;font-size:2.5rem;color:#fff;cursor:pointer;z-index:10001;">&times;</span>
+        <div id="media-modal-content" style="max-width:90vw;max-height:90vh;display:flex;align-items:center;justify-content:center;"></div>
+    </div>
+    
+    <script>
+        // Failsafe loader removal
+        (function() {
+            function hideLoader() {
+                var loader = document.querySelector('.loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }
+            
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(hideLoader, 500);
+                });
+            } else {
+                setTimeout(hideLoader, 500);
+            }
+            
+            window.addEventListener('load', function() {
+                setTimeout(hideLoader, 1000);
+            });
+            
+            setTimeout(hideLoader, 3000);
+        })();
+
+        // Modal/lightbox for images and videos (video only plays in modal)
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('media-modal');
+            const modalContent = document.getElementById('media-modal-content');
+            const closeBtn = document.getElementById('media-modal-close');
+            document.querySelectorAll('.media-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = this.getAttribute('data-type');
+                    const src = this.getAttribute('href');
+                    modalContent.innerHTML = '';
+                    if (type === 'img') {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.style.maxWidth = '90vw';
+                        img.style.maxHeight = '90vh';
+                        img.alt = '';
+                        modalContent.appendChild(img);
+                    } else if (type === 'video') {
+                        const video = document.createElement('video');
+                        video.src = src;
+                        video.controls = true;
+                        video.autoplay = true;
+                        video.style.maxWidth = '90vw';
+                        video.style.maxHeight = '90vh';
+                        modalContent.appendChild(video);
+                    }
+                    modal.style.display = 'flex';
+                });
+            });
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                modalContent.innerHTML = '';
+            });
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    modalContent.innerHTML = '';
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    modalContent.innerHTML = '';
+                }
+            });
+        });
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

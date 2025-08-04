@@ -1,0 +1,120 @@
+/* ExploreCS specific styles */
+.cs-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.topic-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
+    min-height: 200px;
+}
+
+.topic-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.topic-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topic-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.topic-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.topic-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.feature {
+    background: rgba(57, 255, 20, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--accent-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.learning-path {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+.learning-path h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.path-intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.path-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.path-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.feature-icon {
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cs-topics {
+        grid-template-columns: 1fr;
+    }
+    
+    .topic-card {
+        padding: 1.5rem;
+    }
+    
+    .topic-title {
+        font-size: 1.6rem;
+    }
+    
+    .learning-path {
+        padding: 1.5rem;
+    }
+}
