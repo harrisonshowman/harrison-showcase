@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Development Setup Guide | harrison-showcase</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Development Setup Guide" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/dev-setup.html" />
+<meta property="og:url" content="http://localhost:4000/dev-setup.html" />
+<meta property="og:site_name" content="harrison-showcase" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Development Setup Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Development Setup Guide","url":"http://localhost:4000/dev-setup.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2c2dbec31878f989d333d1292b66d5d4f4a46804">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">harrison-showcase</a></h1>
+      
+
+      <h1 id="development-setup-guide">Development Setup Guide</h1>
+
+<h2 id="-quick-start">🚀 Quick Start</h2>
+
+<ol>
+  <li><strong>Install dependencies:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Start development server:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Open in browser:</strong>
+Visit <code class="language-plaintext highlighter-rouge">http://localhost:3000</code></li>
+</ol>
+
+<h2 id="-project-structure">📁 Project Structure</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>harrison-showcase/
+├── src/                          # React source code
+│   ├── components/               # React components
+│   ├── hooks/                    # Custom hooks
+│   ├── App.tsx                   # Main app
+│   ├── App.css                   # Component styles
+│   ├── style.css                 # Global styles
+│   └── index.css                 # Base styles
+├── public/                       # Static assets
+├── old-version/                  # Previous HTML version (backup)
+├── index.html                    # Main entry point
+├── package.json                  # Dependencies
+└── README.md                     # Documentation
+</code></pre></div></div>
+
+<h2 id="-development-commands">🔧 Development Commands</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">npm start</code> - Start development server</li>
+  <li><code class="language-plaintext highlighter-rouge">npm run build</code> - Build for production</li>
+  <li><code class="language-plaintext highlighter-rouge">npm test</code> - Run tests</li>
+  <li><code class="language-plaintext highlighter-rouge">npm run eject</code> - Eject from Create React App</li>
+</ul>
+
+<h2 id="-customization">🎨 Customization</h2>
+
+<h3 id="adding-content">Adding Content</h3>
+<ul>
+  <li><strong>Home page</strong>: Edit <code class="language-plaintext highlighter-rouge">src/components/Home.tsx</code></li>
+  <li><strong>Explore CS</strong>: Edit <code class="language-plaintext highlighter-rouge">src/components/ExploreCS.tsx</code></li>
+  <li><strong>Portfolio</strong>: Edit <code class="language-plaintext highlighter-rouge">src/components/Portfolio.tsx</code></li>
+  <li><strong>Profile</strong>: Edit <code class="language-plaintext highlighter-rouge">src/components/Profile.tsx</code></li>
+</ul>
+
+<h3 id="styling">Styling</h3>
+<ul>
+  <li><strong>Global styles</strong>: Edit <code class="language-plaintext highlighter-rouge">src/style.css</code></li>
+  <li><strong>Component styles</strong>: Edit <code class="language-plaintext highlighter-rouge">src/App.css</code></li>
+  <li><strong>Colors</strong>: Update CSS variables in <code class="language-plaintext highlighter-rouge">src/style.css</code></li>
+</ul>
+
+<h3 id="animations">Animations</h3>
+<ul>
+  <li><strong>Splash screen</strong>: Edit <code class="language-plaintext highlighter-rouge">src/components/SplashScreen.tsx</code></li>
+  <li><strong>Component animations</strong>: Use Framer Motion in components</li>
+</ul>
+
+<h2 id="-deployment">🚀 Deployment</h2>
+
+<ol>
+  <li><strong>Build for production:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Deploy options:</strong>
+    <ul>
+      <li><strong>GitHub Pages</strong>: Push to GitHub and enable Pages</li>
+      <li><strong>Netlify</strong>: Connect GitHub repo</li>
+      <li><strong>Vercel</strong>: Connect GitHub repo</li>
+      <li><strong>Traditional hosting</strong>: Upload <code class="language-plaintext highlighter-rouge">build</code> folder</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-features">📱 Features</h2>
+
+<ul>
+  <li>✅ SPA navigation with React Router</li>
+  <li>✅ Splash screen transitions</li>
+  <li>✅ Dark/light mode toggle</li>
+  <li>✅ Responsive design</li>
+  <li>✅ TypeScript support</li>
+  <li>✅ Framer Motion animations</li>
+  <li>✅ Purple/blue theme</li>
+</ul>
+
+<h2 id="-migration-notes">🔄 Migration Notes</h2>
+
+<ul>
+  <li>Old HTML version is preserved in <code class="language-plaintext highlighter-rouge">old-version/</code> folder</li>
+  <li>All original functionality has been preserved</li>
+  <li>Enhanced with modern React features</li>
+  <li>Better performance and maintainability</li>
+</ul>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
