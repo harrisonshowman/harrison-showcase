@@ -9,40 +9,46 @@ interface SplashScreenProps {
 const SplashScreen: React.FC<SplashScreenProps> = ({ destination, onComplete }) => {
   const [showIcon, setShowIcon] = useState(false);
   const [hideIcon, setHideIcon] = useState(false);
+  const [animationPhase, setAnimationPhase] = useState<'slideIn' | 'hold' | 'slideOut'>('slideIn');
 
   const destinationMap: { [key: string]: string } = {
+    'home': 'home',
     'explore': 'cs',
     'portfolio': 'portfolio',
     'profile': 'about'
   };
 
   const iconMap: { [key: string]: string } = {
+    'home': '🏠',
     'cs': '📚',
     'portfolio': '💡',
     'about': '👤'
   };
 
   const colorMap: { [key: string]: string } = {
-    'cs': '#1e40af', // Deep blue for CS
-    'portfolio': '#7C3AED', // Purple for portfolio
-    'about': '#4F8CFF' // Blue for about
+    'home': 'var(--chart-2)', // Purple for home
+    'cs': 'var(--primary)', // Primary color for CS
+    'portfolio': 'var(--accent)', // Accent color for portfolio
+    'about': 'var(--chart-3)' // Chart color for about
   };
 
   useEffect(() => {
-    // Show icon after pieces slide in (500ms)
+    // Show icon after pieces slide in (400ms)
     const iconTimer = setTimeout(() => {
       setShowIcon(true);
-    }, 500);
+      setAnimationPhase('hold');
+    }, 400);
 
-    // Hide icon before pieces slide out (950ms before end)
+    // Hide icon and start slide out (800ms - shorter static period)
     const hideIconTimer = setTimeout(() => {
       setHideIcon(true);
-    }, 1950);
+      setAnimationPhase('slideOut');
+    }, 800);
 
-    // Complete animation after 2.9 seconds
+    // Complete animation after slide out finishes (800ms + 0.8s animation + 0.4s stagger = 2.0s)
     const completeTimer = setTimeout(() => {
       onComplete();
-    }, 2900);
+    }, 2000);
 
     return () => {
       clearTimeout(iconTimer);
@@ -51,7 +57,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ destination, onComplete }) 
     };
   }, [onComplete]);
 
-  const pieces = Array.from({ length: 5 }, (_, i) => i);
+  const pieces = Array.from({ length: 8 }, (_, i) => i);
 
   return (
     <AnimatePresence>
@@ -76,29 +82,41 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ destination, onComplete }) 
         data-destination={destinationMap[destination]}
       >
         <div className="splash-pieces" style={{ position: 'relative', width: '100%', height: '100%' }}>
-          {pieces.map((piece, index) => (
-            <motion.div
-              key={piece}
-              className="splash-piece"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: `${(index * 20)}%`,
-                width: '20%',
-                height: '100%',
-                background: colorMap[destinationMap[destination]],
-                transform: 'translateX(-100vw)'
-              }}
-              initial={{ x: '-100vw' }}
-              animate={{ x: '0vw' }}
-              exit={{ x: '100vw' }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-            />
-          ))}
+          {pieces.map((piece, index) => {
+            const isFromLeft = index % 2 === 0;
+            
+            // Define animation states
+            const slideInX = '0%';
+            const slideOutX = isFromLeft ? '100%' : '-100%';
+            
+            let animateX = slideInX;
+            if (animationPhase === 'slideOut') {
+              animateX = slideOutX;
+            }
+            
+            return (
+              <motion.div
+                key={piece}
+                className="splash-piece"
+                style={{
+                  position: 'absolute',
+                  top: `${(index * 12.5)}%`,
+                  left: '0',
+                  width: '100%',
+                  height: '12.5vh',
+                  background: colorMap[destinationMap[destination]],
+                  zIndex: 1000 + index
+                }}
+                initial={{ x: isFromLeft ? '-100%' : '100%' }}
+                animate={{ x: animateX }}
+                transition={{
+                  duration: animationPhase === 'slideOut' ? 0.8 : 0.4, // Longer slide-out animation
+                  delay: index * 0.05,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+              />
+            );
+          })}
         </div>
 
         <motion.div
@@ -118,7 +136,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ destination, onComplete }) 
             opacity: showIcon && !hideIcon ? 1 : 0,
             scale: showIcon && !hideIcon ? 1 : 0.5
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2 }}
         >
           {iconMap[destinationMap[destination]]}
         </motion.div>

@@ -1,60 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigation } from '../hooks/useNavigation';
 
 interface HomeProps {
   onNavigate: (destination: string) => void;
 }
 
 const Home: React.FC<HomeProps> = ({ onNavigate }) => {
-  const navigateWithSplash = useNavigation(onNavigate);
-
   return (
     <div className="container">
       <header>
-        <div className="brush-highlight">
-          <svg 
-            className="cloud-svg" 
-            width="100%" 
-            height="100%" 
-            viewBox="0 0 700 140" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              zIndex: 0,
-              pointerEvents: 'none'
-            }}
-          >
-            <path 
-              d="M50,100 Q120,30 350,50 Q600,30 650,100 Q700,120 600,130 Q350,140 100,130 Q0,120 50,100 Z" 
-              fill="#A5B4FC" 
-              fillOpacity="0.92" 
-              className="cloud-shape-dark"
-            />
-            <path 
-              d="M50,100 Q120,30 350,50 Q600,30 650,100 Q700,120 600,130 Q350,140 100,130 Q0,120 50,100 Z" 
-              fill="#7C3AED" 
-              fillOpacity="0.32" 
-              className="cloud-shape-light"
-              style={{ display: 'none' }}
-            />
-          </svg>
-          <motion.h1 
-            className="glitch" 
-            data-text="Harrison Showman"
-            style={{ position: 'relative', zIndex: 1 }}
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Harrison Showman
-          </motion.h1>
-        </div>
+        <motion.h1 
+          className="glitch" 
+          data-text="Harrison Showman"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Harrison Showman
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          Software Developer & Creative Technologist
+        </motion.p>
       </header>
 
       <motion.div 
@@ -78,7 +48,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
             <button 
               className="button-accent home-card-btn"
-              onClick={() => navigateWithSplash('explore')}
+              onClick={() => onNavigate('explore')}
             >
               Explore CS
             </button>
@@ -98,7 +68,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
             <button 
               className="button-accent home-card-btn"
-              onClick={() => navigateWithSplash('portfolio')}
+              onClick={() => onNavigate('portfolio')}
             >
               View Portfolio
             </button>
@@ -113,7 +83,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         >
           <button 
             className="button-accent about-btn"
-            onClick={() => navigateWithSplash('profile')}
+            onClick={() => onNavigate('profile')}
           >
             About Me
           </button>
