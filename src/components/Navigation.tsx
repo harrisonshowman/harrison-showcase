@@ -1,18 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface NavigationProps {
-  currentPage: string;
   onNavigate: (page: string) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
+const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
   const navItems = [
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'explore', label: 'Explore CS', icon: '📚' },
-    { id: 'portfolio', label: 'Portfolio', icon: '💡' },
-    { id: 'profile', label: 'About', icon: '👤' }
+    { id: 'home', label: 'Home', icon: '🏠', path: '/' },
+    { id: 'explore', label: 'Explore CS', icon: '📚', path: '/explore' },
+    { id: 'portfolio', label: 'Portfolio', icon: '💡', path: '/portfolio' },
+    { id: 'profile', label: 'About', icon: '👤', path: '/profile' }
   ];
+
+  const handleNavClick = (item: typeof navItems[0]) => {
+    onNavigate(item.id);
+    navigate(item.path);
+  };
+
+  const getCurrentPage = () => {
+    const path = location.pathname;
+    const item = navItems.find(nav => nav.path === path);
+    return item ? item.id : 'home';
+  };
 
   return (
     <nav className="navigation">
@@ -36,8 +50,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
           {navItems.map((item, index) => (
             <motion.button
               key={item.id}
-              className={`nav-link ${currentPage === item.id ? 'active' : ''}`}
-              onClick={() => onNavigate(item.id)}
+              className={`nav-link ${getCurrentPage() === item.id ? 'active' : ''}`}
+              onClick={() => handleNavClick(item)}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -10 }}
