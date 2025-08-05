@@ -1,14 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigation } from '../hooks/useNavigation';
 
 interface PortfolioProps {
   onNavigate: (destination: string) => void;
 }
 
 const Portfolio: React.FC<PortfolioProps> = ({ onNavigate }) => {
-  const navigateWithSplash = useNavigation(onNavigate);
-
   return (
     <div className="container">
       <header>
@@ -41,7 +38,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ onNavigate }) => {
           
           <button 
             className="button-accent"
-            onClick={() => navigateWithSplash('home')}
+            onClick={() => onNavigate('home')}
             style={{ marginTop: '2rem' }}
           >
             Back to Home

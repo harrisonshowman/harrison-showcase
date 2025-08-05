@@ -1,14 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigation } from '../hooks/useNavigation';
 
 interface ProfileProps {
   onNavigate: (destination: string) => void;
 }
 
 const Profile: React.FC<ProfileProps> = ({ onNavigate }) => {
-  const navigateWithSplash = useNavigation(onNavigate);
-
   return (
     <div className="container">
       <header>
@@ -41,7 +38,7 @@ const Profile: React.FC<ProfileProps> = ({ onNavigate }) => {
           
           <button 
             className="button-accent"
-            onClick={() => navigateWithSplash('home')}
+            onClick={() => onNavigate('home')}
             style={{ marginTop: '2rem' }}
           >
             Back to Home

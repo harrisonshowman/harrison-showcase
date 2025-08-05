@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Navigation System Update - Figma Pattern | harrison-showcase</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Navigation System Update - Figma Pattern" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/FIGMA_NAVIGATION_UPDATE.html" />
+<meta property="og:url" content="http://localhost:4000/FIGMA_NAVIGATION_UPDATE.html" />
+<meta property="og:site_name" content="harrison-showcase" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Navigation System Update - Figma Pattern" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Navigation System Update - Figma Pattern","url":"http://localhost:4000/FIGMA_NAVIGATION_UPDATE.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2c2dbec31878f989d333d1292b66d5d4f4a46804">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">harrison-showcase</a></h1>
+      
+
+      <h1 id="navigation-system-update---figma-pattern">Navigation System Update - Figma Pattern</h1>
+
+<h2 id="-updated-to-match-figma-design-pattern">🎯 <strong>Updated to Match Figma Design Pattern</strong></h2>
+
+<p>Your React app now follows the same navigation pattern as your Figma design:</p>
+
+<h3 id="key-changes-made"><strong>Key Changes Made:</strong></h3>
+
+<ol>
+  <li><strong>Removed React Router</strong>
+    <ul>
+      <li>✅ No more <code class="language-plaintext highlighter-rouge">react-router-dom</code> dependency</li>
+      <li>✅ Simplified page-based navigation</li>
+      <li>✅ Direct component rendering</li>
+    </ul>
+  </li>
+  <li><strong>Added Navigation Component</strong>
+    <ul>
+      <li>✅ Fixed navigation bar at the top</li>
+      <li>✅ Brand logo and title</li>
+      <li>✅ Navigation links with icons</li>
+      <li>✅ Active page highlighting</li>
+      <li>✅ Responsive design</li>
+    </ul>
+  </li>
+  <li><strong>Updated App Structure</strong>
+    <ul>
+      <li>✅ <code class="language-plaintext highlighter-rouge">currentPage</code> state management</li>
+      <li>✅ <code class="language-plaintext highlighter-rouge">handleNavigation</code> function</li>
+      <li>✅ <code class="language-plaintext highlighter-rouge">renderPage</code> switch statement</li>
+      <li>✅ Smooth page transitions with splash screen</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-new-navigation-features">🧭 <strong>New Navigation Features</strong></h2>
+
+<h3 id="navigation-bar"><strong>Navigation Bar</strong></h3>
+<ul>
+  <li><strong>Fixed Position</strong>: Always visible at the top</li>
+  <li><strong>Brand Section</strong>: “HS” logo + “Harrison Showman” title</li>
+  <li><strong>Navigation Links</strong>: Home, Explore CS, Portfolio, About</li>
+  <li><strong>Active State</strong>: Current page is highlighted</li>
+  <li><strong>Responsive</strong>: Icons only on mobile, labels on desktop</li>
+</ul>
+
+<h3 id="page-transitions"><strong>Page Transitions</strong></h3>
+<ul>
+  <li><strong>Splash Screen</strong>: Beautiful transition between pages</li>
+  <li><strong>Smooth Scrolling</strong>: Auto-scroll to top on page change</li>
+  <li><strong>Animation Timing</strong>: 2.9s splash duration for smooth experience</li>
+</ul>
+
+<h3 id="component-structure"><strong>Component Structure</strong></h3>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// App.tsx - Main navigation logic</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">currentPage</span><span class="p">,</span> <span class="nx">setCurrentPage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">handleNavigation</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newPage</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Trigger splash screen</span>
+  <span class="c1">// Navigate after animation</span>
+  <span class="c1">// Scroll to top</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">renderPage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">currentPage</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">:</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Home</span> <span class="nx">onNavigate</span><span class="o">=</span><span class="p">{</span><span class="nx">handleNavigation</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span>    <span class="k">case</span> <span class="dl">'</span><span class="s1">explore</span><span class="dl">'</span><span class="p">:</span> <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ExploreCS</span> <span class="nx">onNavigate</span><span class="o">=</span><span class="p">{</span><span class="nx">handleNavigation</span><span class="p">}</span> <span class="sr">/&gt;</span><span class="err">;
+</span>    <span class="c1">// ... etc</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="-design-system-integration">🎨 <strong>Design System Integration</strong></h2>
+
+<h3 id="navigation-styling"><strong>Navigation Styling</strong></h3>
+<ul>
+  <li><strong>Background</strong>: <code class="language-plaintext highlighter-rouge">var(--card)</code> with backdrop blur</li>
+  <li><strong>Border</strong>: <code class="language-plaintext highlighter-rouge">var(--border)</code> bottom border</li>
+  <li><strong>Active State</strong>: <code class="language-plaintext highlighter-rouge">var(--primary)</code> background</li>
+  <li><strong>Hover Effects</strong>: Smooth transitions and scaling</li>
+</ul>
+
+<h3 id="responsive-design"><strong>Responsive Design</strong></h3>
+<ul>
+  <li><strong>Mobile</strong>: Icon-only navigation</li>
+  <li><strong>Desktop</strong>: Icons + labels</li>
+  <li><strong>Tablet</strong>: Adaptive layout</li>
+</ul>
+
+<h2 id="-how-it-works">🚀 <strong>How It Works</strong></h2>
+
+<h3 id="navigation-flow"><strong>Navigation Flow</strong></h3>
+<ol>
+  <li>User clicks navigation link</li>
+  <li>Splash screen appears with destination color</li>
+  <li>Page content changes after animation</li>
+  <li>Smooth scroll to top</li>
+  <li>Navigation bar updates active state</li>
+</ol>
+
+<h3 id="component-communication"><strong>Component Communication</strong></h3>
+<ul>
+  <li><strong>App → Navigation</strong>: Passes <code class="language-plaintext highlighter-rouge">currentPage</code> and <code class="language-plaintext highlighter-rouge">onNavigate</code></li>
+  <li><strong>App → Pages</strong>: Passes <code class="language-plaintext highlighter-rouge">onNavigate</code> function</li>
+  <li><strong>Pages → App</strong>: Call <code class="language-plaintext highlighter-rouge">onNavigate('page-name')</code></li>
+</ul>
+
+<h2 id="-available-pages">📱 <strong>Available Pages</strong></h2>
+
+<ol>
+  <li><strong>Home</strong> (<code class="language-plaintext highlighter-rouge">'home'</code>)
+    <ul>
+      <li>Main landing page</li>
+      <li>Project cards</li>
+      <li>About button</li>
+    </ul>
+  </li>
+  <li><strong>Explore CS</strong> (<code class="language-plaintext highlighter-rouge">'explore'</code>)
+    <ul>
+      <li>Computer science resources</li>
+      <li>Data structures &amp; algorithms</li>
+    </ul>
+  </li>
+  <li><strong>Portfolio</strong> (<code class="language-plaintext highlighter-rouge">'portfolio'</code>)
+    <ul>
+      <li>Project showcases</li>
+      <li>Creative work</li>
+    </ul>
+  </li>
+  <li><strong>About</strong> (<code class="language-plaintext highlighter-rouge">'profile'</code>)
+    <ul>
+      <li>Personal information</li>
+      <li>Bio and skills</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="-benefits">✨ <strong>Benefits</strong></h2>
+
+<ol>
+  <li><strong>Simplified Architecture</strong>: No complex routing</li>
+  <li><strong>Better Performance</strong>: Direct component rendering</li>
+  <li><strong>Consistent UX</strong>: Same pattern as Figma design</li>
+  <li><strong>Easy Maintenance</strong>: Centralized navigation logic</li>
+  <li><strong>Smooth Transitions</strong>: Beautiful splash animations</li>
+</ol>
+
+<h2 id="-next-steps">🔧 <strong>Next Steps</strong></h2>
+
+<ol>
+  <li><strong>Add Content</strong>: Populate each page with your actual content</li>
+  <li><strong>Customize Navigation</strong>: Adjust colors, spacing, or layout</li>
+  <li><strong>Add More Pages</strong>: Easy to extend with new pages</li>
+  <li><strong>Enhance Animations</strong>: Add more transition effects</li>
+</ol>
+
+<p>Your React app now perfectly matches your Figma design pattern with a clean, modern navigation system!</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
